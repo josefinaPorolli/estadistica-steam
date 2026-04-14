@@ -1,0 +1,122 @@
+[
+    {
+        "app_id": 730,
+        "nombre": "Counter-Strike 2",
+        "precio_base_usd": 0,
+        "porcentaje_resenas_positivas": 86.7,
+        "categoria_resenas": "Very Positive",
+        "pico_historico_concurrentes": 1013936,
+        "jugadores_promedio": 33597,
+        "estado_lanzamiento": "Completo Directo",
+        "soporte_multiplataforma": ["Windows", "Linux"],
+        "genero_principal": "Action"
+    },
+    {
+        "app_id": 271590,
+        "nombre": "Grand Theft Auto V Legacy",
+        "precio_base_usd": 29.99,
+        "porcentaje_resenas_positivas": 87.4,
+        "categoria_resenas": "Very Positive",
+        "pico_historico_concurrentes": 67851,
+        "jugadores_promedio": 14589,
+        "estado_lanzamiento": "Completo Directo",
+        "soporte_multiplataforma": ["Windows"],
+        "genero_principal": "Action"
+    },
+    {
+        "app_id": 292030,
+        "nombre": "The Witcher 3: Wild Hunt",
+        "precio_base_usd": 39.99,
+        "porcentaje_resenas_positivas": 96.1,
+        "categoria_resenas": "Overwhelmingly Positive",
+        "pico_historico_concurrentes": 15893,
+        "jugadores_promedio": 3662,
+        "estado_lanzamiento": "Completo Directo",
+        "soporte_multiplataforma": ["Windows"],
+        "genero_principal": "RPG"
+    },
+    {
+        "app_id": 1091500,
+        "nombre": "Cyberpunk 2077",
+        "precio_base_usd": 59.99,
+        "porcentaje_resenas_positivas": 84.4,
+        "categoria_resenas": "Very Positive",
+        "pico_historico_concurrentes": 22265,
+        "jugadores_promedio": 4922,
+        "estado_lanzamiento": "Completo Directo",
+        "soporte_multiplataforma": ["Windows", "Mac"],
+        "genero_principal": "RPG"
+    },
+    {
+        "app_id": 367520,
+        "nombre": "Hollow Knight",
+        "precio_base_usd": 14.99,
+        "porcentaje_resenas_positivas": 97.0,
+        "categoria_resenas": "Overwhelmingly Positive",
+        "pico_historico_concurrentes": 4912,
+        "jugadores_promedio": 2235,
+        "estado_lanzamiento": "Completo Directo",
+        "soporte_multiplataforma": ["Windows", "Mac", "Linux"],
+        "genero_principal": "Action"
+    },
+    {
+        "app_id": 1623730,
+        "nombre": "Palworld",
+        "precio_base_usd": 29.99,
+        "porcentaje_resenas_positivas": 94.1,
+        "categoria_resenas": "Very Positive",
+        "pico_historico_concurrentes": 18028,
+        "jugadores_promedio": 3869,
+        "estado_lanzamiento": "Early Access",
+        "soporte_multiplataforma": ["Windows"],
+        "genero_principal": "Action"
+    },
+    {
+        "app_id": 1145350,
+        "nombre": "Hades II",
+        "precio_base_usd": 29.99,
+        "porcentaje_resenas_positivas": 94.9,
+        "categoria_resenas": "Overwhelmingly Positive",
+        "pico_historico_concurrentes": 1838,
+        "jugadores_promedio": 2525,
+        "estado_lanzamiento": "Completo Directo",
+        "soporte_multiplataforma": ["Windows", "Mac"],
+        "genero_principal": "Action"
+    },
+    {
+        "app_id": 892970,
+        "nombre": "Valheim",
+        "precio_base_usd": 19.99,
+        "porcentaje_resenas_positivas": 94.3,
+        "categoria_resenas": "Very Positive",
+        "pico_historico_concurrentes": 14439,
+        "jugadores_promedio": 4688,
+        "estado_lanzamiento": "Early Access",
+        "soporte_multiplataforma": ["Windows", "Mac", "Linux"],
+        "genero_principal": "Action"
+    },
+    {
+        "app_id": 739630,
+        "nombre": "Phasmophobia",
+        "precio_base_usd": 19.99,
+        "porcentaje_resenas_positivas": 95.8,
+        "categoria_resenas": "Overwhelmingly Positive",
+        "pico_historico_concurrentes": 9978,
+        "jugadores_promedio": 2439,
+        "estado_lanzamiento": "Early Access",
+        "soporte_multiplataforma": ["Windows"],
+        "genero_principal": "Action"
+    },
+    {
+        "app_id": 108600,
+        "nombre": "Project Zomboid",
+        "precio_base_usd": 19.99,
+        "porcentaje_resenas_positivas": 94.2,
+        "categoria_resenas": "Very Positive",
+        "pico_historico_concurrentes": 22864,
+        "jugadores_promedio": 4215,
+        "estado_lanzamiento": "Early Access",
+        "soporte_multiplataforma": ["Windows", "Mac", "Linux"],
+        "genero_principal": "Indie"
+    }
+]
