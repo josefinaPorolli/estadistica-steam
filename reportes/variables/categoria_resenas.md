@@ -34,7 +34,15 @@
 
 **Total de juegos:** 6
 
-### Visualización
+### Visualización - Gráficos de Barras
 
-![Dot plot de categorías de reseñas](../../images/frecuencias_categoria_resenas_dotplot.png)
+![Barras separadas de categorías de reseñas](../../images/frecuencias_categoria_resenas_barras_separadas.png)
+
+![Barras comparativas de categorías de reseñas](../../images/frecuencias_categoria_resenas_barras_comparativas.png)
+
+### Visualización - Gráficos de Ojiva
+
+![Ojivas separadas de categorías de reseñas](../../images/frecuencias_categoria_resenas_ojivas_separadas.png)
+
+![Ojivas comparativas de categorías de reseñas](../../images/frecuencias_categoria_resenas_ojivas_comparativas.png)
 

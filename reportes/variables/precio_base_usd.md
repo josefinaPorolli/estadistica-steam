@@ -26,7 +26,31 @@
 
 **Total de juegos:** 6
 
-### Visualización
+### Visualización - Histograma
 
-![Histograma de precio base](../../images/frecuencias_precio.png)
+![Histograma de precio base](../../images/frecuencias_precio_histograma.png)
+
+### Visualización - Polígono de Frecuencias
+
+![Polígono de precio base](../../images/frecuencias_precio_poligono.png)
+
+### Visualización - Polígono Junto
+
+![Polígono comparativo de precio base](../../images/frecuencias_precio_poligono_comparativo.png)
+
+### Visualización - Ojiva
+
+![Ojiva de precio base](../../images/frecuencias_precio_ojiva.png)
+
+### Visualización - Ojiva Junto
+
+![Ojiva comparativa de precio base](../../images/frecuencias_precio_ojiva_comparativa.png)
+
+### Visualización - Boxplot Horizontal
+
+![Boxplot horizontal de precio base](../../images/frecuencias_precio_boxplot_horizontal.png)
+
+### Visualización - Boxplot Comparativo
+
+![Boxplot comparativo de precio base](../../images/frecuencias_precio_boxplot_comparativo.png)
 
