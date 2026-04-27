@@ -22,5 +22,5 @@
 
 ### Visualización
 
-![Dot plot de soporte multiplataforma](../../images/frecuencias_soporte_plataforma_dotplot.png)
+![Barras comparativas de soporte multiplataforma](../../images/frecuencias_soporte_multiplataforma_barras_comparativas.png)
 

@@ -26,7 +26,29 @@
 
 **Total de juegos:** 6
 
-### Visualización
+### Visualización - Gráficos de Barras
 
-![Barras de jugadores promedio](../../images/frecuencias_jugadores_promedio_barras.png)
+![Barras separadas de jugadores promedio](../../images/frecuencias_jugadores_promedio_barras_separadas.png)
+
+![Barras comparativas de jugadores promedio](../../images/frecuencias_jugadores_promedio_barras_comparativas.png)
+
+### Visualización - Polígono de Frecuencias
+
+![Polígono separado de jugadores promedio](../../images/frecuencias_jugadores_promedio_poligono_separado.png)
+
+![Polígono comparativo de jugadores promedio](../../images/frecuencias_jugadores_promedio_poligono_comparativo.png)
+
+### Visualización - Gráficos de Ojiva
+
+![Ojivas separadas de jugadores promedio](../../images/frecuencias_jugadores_promedio_ojivas_separadas.png)
+
+![Ojivas comparativas de jugadores promedio](../../images/frecuencias_jugadores_promedio_ojivas_comparativas.png)
+
+### Visualización - Boxplot Horizontal
+
+![Boxplot horizontal de jugadores promedio](../../images/frecuencias_jugadores_promedio_boxplot_horizontal.png)
+
+### Visualización - Boxplot Comparativo
+
+![Boxplot comparativo de jugadores promedio](../../images/frecuencias_jugadores_promedio_boxplot_comparativo.png)
 

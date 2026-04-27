@@ -56,7 +56,31 @@
 
 **Total de juegos:** 6
 
-### Visualización
+### Visualización - Histograma
 
-![Histograma de porcentaje de reseñas positivas](../../images/frecuencias_resenas.png)
+![Histograma de porcentaje de reseñas positivas](../../images/frecuencias_resenas_histograma.png)
+
+### Visualización - Polígono de Frecuencias
+
+![Polígono de porcentaje de reseñas positivas](../../images/frecuencias_resenas_poligono.png)
+
+### Visualización - Polígono Junto
+
+![Polígono comparativo de porcentaje de reseñas positivas](../../images/frecuencias_resenas_poligono_comparativo.png)
+
+### Visualización - Ojiva
+
+![Ojiva de porcentaje de reseñas positivas](../../images/frecuencias_resenas_ojiva.png)
+
+### Visualización - Ojiva Junto
+
+![Ojiva comparativa de porcentaje de reseñas positivas](../../images/frecuencias_resenas_ojiva_comparativa.png)
+
+### Visualización - Boxplot Horizontal
+
+![Boxplot horizontal de porcentaje de reseñas positivas](../../images/frecuencias_resenas_boxplot_horizontal.png)
+
+### Visualización - Boxplot Comparativo
+
+![Boxplot comparativo de porcentaje de reseñas positivas](../../images/frecuencias_resenas_boxplot_comparativo.png)
 

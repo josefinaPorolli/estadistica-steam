@@ -26,7 +26,31 @@
 
 **Total de juegos:** 6
 
-### Visualización
+### Visualización - Histograma
 
-![Barras de pico histórico de concurrentes](../../images/frecuencias_pico_historico_barras.png)
+![Histograma de pico histórico de concurrentes](../../images/frecuencias_pico_historico_histograma.png)
+
+### Visualización - Polígono de Frecuencias
+
+![Polígono de pico histórico de concurrentes](../../images/frecuencias_pico_historico_poligono.png)
+
+### Visualización - Polígono Junto
+
+![Polígono junto de pico histórico de concurrentes](../../images/frecuencias_pico_historico_poligono_comparativo.png)
+
+### Visualización - Ojiva
+
+![Ojiva de pico histórico de concurrentes](../../images/frecuencias_pico_historico_ojiva.png)
+
+### Visualización - Ojiva Junto
+
+![Ojiva junto de pico histórico de concurrentes](../../images/frecuencias_pico_historico_ojiva_comparativa.png)
+
+### Visualización - Boxplot Horizontal
+
+![Boxplot horizontal de pico histórico de concurrentes](../../images/frecuencias_pico_historico_boxplot_horizontal.png)
+
+### Visualización - Boxplot Comparativo
+
+![Boxplot comparativo de pico histórico de concurrentes](../../images/frecuencias_pico_historico_boxplot_comparativo.png)
 

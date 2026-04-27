@@ -22,5 +22,5 @@
 
 ### Visualización
 
-![Dot plot de género principal](../../images/frecuencias_genero_principal_dotplot.png)
+![Barras comparativas de género principal](../../images/frecuencias_genero_principal_barras_comparativas.png)
 
