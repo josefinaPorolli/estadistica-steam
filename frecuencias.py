@@ -12,9 +12,11 @@ import pandas as pd
 BASE_DIR = Path(__file__).resolve().parent
 IMAGES_DIR = BASE_DIR / "images"
 REPORTES_DIR = BASE_DIR / "reportes"
+REPORTES_VARIABLES_DIR = REPORTES_DIR / "variables"
 
 IMAGES_DIR.mkdir(exist_ok=True)
 REPORTES_DIR.mkdir(exist_ok=True)
+REPORTES_VARIABLES_DIR.mkdir(exist_ok=True)
 
 # Estilo para graficos
 plt.style.use("seaborn-v0_8-darkgrid")
@@ -43,6 +45,7 @@ def construir_bins_paso(valores: pd.Series, paso: float, minimo: float | None = 
 
 def construir_bins_optimos_sturges(valores: pd.Series):
     """Calcula intervalos para variables continuas usando la regla de Sturges."""
+    # La regla de Sturges sugiere k = 1 + 3.322 * log10(n) intervalos, donde n es el número de datos.
     serie = valores.dropna()
     n = len(serie)
 
@@ -139,6 +142,20 @@ def agregar_tabla_markdown(md_content: list[str], titulo: str, tabla: list[dict]
             f"| {row['categoria']} | {row['fi']} | {row['hi']} | {row['Fi']} | {row['Hi']} |\n"
         )
     md_content.append(f"\n**Total de juegos:** {total}\n\n")
+
+
+def guardar_reporte_variable(nombre_archivo: str, titulo_variable: str, contenido_frecuencias: list[str]):
+    """Guarda un reporte Markdown por variable con la sección del ítem frecuencias."""
+    md = []
+    md.append(f"# {titulo_variable}\n\n")
+    md.append("## Frecuencias\n\n")
+    md.extend(contenido_frecuencias)
+
+    reporte_path = REPORTES_VARIABLES_DIR / f"{nombre_archivo}.md"
+    with open(reporte_path, "w", encoding="utf-8") as f:
+        f.write("".join(md))
+
+    return reporte_path
 
 
 def generar_histograma_doble(
@@ -261,14 +278,10 @@ def main():
     early_access = data[data["estado_lanzamiento"] == "Early Access"]
     completo_directo = data[data["estado_lanzamiento"] == "Completo Directo"]
 
-    md_content = []
-    md_content.append("# Frecuencias\n\n")
-    md_content.append(
-        "## Organización y presentación de los datos: construcción de distribuciones de frecuencias\n\n"
-    )
+    reportes_generados = []
 
     # ---------- Precio base ----------
-    md_content.append("## Precio Base (USD)\n\n")
+    contenido_precio = []
     bins_precio = [0, 10, 20, 30, 40, 50, 60]
 
     precio_ea = early_access["precio_base_usd"]
@@ -277,8 +290,8 @@ def main():
     tabla_precio_ea, n_precio_ea = generar_tabla_frecuencias_intervalos(precio_ea, bins_precio)
     tabla_precio_cd, n_precio_cd = generar_tabla_frecuencias_intervalos(precio_cd, bins_precio)
 
-    agregar_tabla_markdown(md_content, "Juegos en Early Access", tabla_precio_ea, n_precio_ea)
-    agregar_tabla_markdown(md_content, "Juegos en Completo Directo", tabla_precio_cd, n_precio_cd)
+    agregar_tabla_markdown(contenido_precio, "Juegos en Early Access", tabla_precio_ea, n_precio_ea)
+    agregar_tabla_markdown(contenido_precio, "Juegos en Completo Directo", tabla_precio_cd, n_precio_cd)
 
     generar_histograma_doble(
         valores_ea=precio_ea,
@@ -289,11 +302,14 @@ def main():
         titulo_cd="Completo Directo - Distribución de Precios",
         nombre_archivo="frecuencias_precio.png",
     )
-    md_content.append("## Visualización - Precio Base\n\n")
-    md_content.append("![Histograma de precio base](../images/frecuencias_precio.png)\n\n")
+    contenido_precio.append("### Visualización\n\n")
+    contenido_precio.append("![Histograma de precio base](../../images/frecuencias_precio.png)\n\n")
+    reportes_generados.append(
+        guardar_reporte_variable("precio_base_usd", "Precio Base (USD)", contenido_precio)
+    )
 
     # ---------- Porcentaje de reseñas positivas ----------
-    md_content.append("## Porcentaje de Reseñas Positivas\n\n")
+    contenido_resenas = []
     resenas_ea = early_access["porcentaje_resenas_positivas"]
     resenas_cd = completo_directo["porcentaje_resenas_positivas"]
     resenas_total = pd.concat([resenas_ea, resenas_cd], ignore_index=True)
@@ -302,8 +318,8 @@ def main():
     tabla_resenas_ea, n_resenas_ea = generar_tabla_frecuencias_intervalos(resenas_ea, bins_resenas)
     tabla_resenas_cd, n_resenas_cd = generar_tabla_frecuencias_intervalos(resenas_cd, bins_resenas)
 
-    agregar_tabla_markdown(md_content, "Juegos en Early Access", tabla_resenas_ea, n_resenas_ea)
-    agregar_tabla_markdown(md_content, "Juegos en Completo Directo", tabla_resenas_cd, n_resenas_cd)
+    agregar_tabla_markdown(contenido_resenas, "Juegos en Early Access", tabla_resenas_ea, n_resenas_ea)
+    agregar_tabla_markdown(contenido_resenas, "Juegos en Completo Directo", tabla_resenas_cd, n_resenas_cd)
 
     generar_histograma_doble(
         valores_ea=resenas_ea,
@@ -314,11 +330,20 @@ def main():
         titulo_cd="Completo Directo - Reseñas Positivas",
         nombre_archivo="frecuencias_resenas.png",
     )
-    md_content.append("## Visualización - Reseñas Positivas\n\n")
-    md_content.append("![Histograma de porcentaje de reseñas positivas](../images/frecuencias_resenas.png)\n\n")
+    contenido_resenas.append("### Visualización\n\n")
+    contenido_resenas.append(
+        "![Histograma de porcentaje de reseñas positivas](../../images/frecuencias_resenas.png)\n\n"
+    )
+    reportes_generados.append(
+        guardar_reporte_variable(
+            "porcentaje_resenas_positivas",
+            "Porcentaje de Reseñas Positivas",
+            contenido_resenas,
+        )
+    )
 
     # ---------- Categorías de reseñas ----------
-    md_content.append("## Categorías de Reseñas\n\n")
+    contenido_cat_resenas = []
     orden_resenas = [
         "No User Reviews",
         "Overwhelmingly Negative",
@@ -339,8 +364,8 @@ def main():
         completo_directo["categoria_resenas"], orden=orden_resenas
     )
 
-    agregar_tabla_markdown(md_content, "Juegos en Early Access", tabla_cat_resenas_ea, n_cat_resenas_ea)
-    agregar_tabla_markdown(md_content, "Juegos en Completo Directo", tabla_cat_resenas_cd, n_cat_resenas_cd)
+    agregar_tabla_markdown(contenido_cat_resenas, "Juegos en Early Access", tabla_cat_resenas_ea, n_cat_resenas_ea)
+    agregar_tabla_markdown(contenido_cat_resenas, "Juegos en Completo Directo", tabla_cat_resenas_cd, n_cat_resenas_cd)
 
     generar_dot_plot_doble_desde_tablas(
         tabla_ea=tabla_cat_resenas_ea,
@@ -350,11 +375,16 @@ def main():
         titulo_cd="Completo Directo - Dot Plot categorías de reseñas",
         nombre_archivo="frecuencias_categoria_resenas_dotplot.png",
     )
-    md_content.append("## Visualización - Categorías de Reseñas\n\n")
-    md_content.append("![Dot plot de categorías de reseñas](../images/frecuencias_categoria_resenas_dotplot.png)\n\n")
+    contenido_cat_resenas.append("### Visualización\n\n")
+    contenido_cat_resenas.append(
+        "![Dot plot de categorías de reseñas](../../images/frecuencias_categoria_resenas_dotplot.png)\n\n"
+    )
+    reportes_generados.append(
+        guardar_reporte_variable("categoria_resenas", "Categorías de Reseñas", contenido_cat_resenas)
+    )
 
     # ---------- Pico histórico de concurrentes ----------
-    md_content.append("## Pico Histórico de Jugadores Concurrentes\n\n")
+    contenido_pico = []
     pico_total = pd.concat(
         [
             early_access["pico_historico_concurrentes"],
@@ -371,8 +401,8 @@ def main():
         completo_directo["pico_historico_concurrentes"], bins_pico
     )
 
-    agregar_tabla_markdown(md_content, "Juegos en Early Access", tabla_pico_ea, n_pico_ea)
-    agregar_tabla_markdown(md_content, "Juegos en Completo Directo", tabla_pico_cd, n_pico_cd)
+    agregar_tabla_markdown(contenido_pico, "Juegos en Early Access", tabla_pico_ea, n_pico_ea)
+    agregar_tabla_markdown(contenido_pico, "Juegos en Completo Directo", tabla_pico_cd, n_pico_cd)
 
     generar_barras_dobles_desde_tablas(
         tabla_ea=tabla_pico_ea,
@@ -381,11 +411,18 @@ def main():
         titulo="Frecuencias - Pico histórico de concurrentes",
         nombre_archivo="frecuencias_pico_historico_barras.png",
     )
-    md_content.append("## Visualización - Pico Histórico de Concurrentes\n\n")
-    md_content.append("![Barras de pico histórico de concurrentes](../images/frecuencias_pico_historico_barras.png)\n\n")
+    contenido_pico.append("### Visualización\n\n")
+    contenido_pico.append("![Barras de pico histórico de concurrentes](../../images/frecuencias_pico_historico_barras.png)\n\n")
+    reportes_generados.append(
+        guardar_reporte_variable(
+            "pico_historico_concurrentes",
+            "Pico Histórico de Jugadores Concurrentes",
+            contenido_pico,
+        )
+    )
 
     # ---------- Jugadores promedio ----------
-    md_content.append("## Jugadores Promedio\n\n")
+    contenido_jugadores = []
     jug_total = pd.concat(
         [
             early_access["jugadores_promedio"],
@@ -402,8 +439,8 @@ def main():
         completo_directo["jugadores_promedio"], bins_jug
     )
 
-    agregar_tabla_markdown(md_content, "Juegos en Early Access", tabla_jug_ea, n_jug_ea)
-    agregar_tabla_markdown(md_content, "Juegos en Completo Directo", tabla_jug_cd, n_jug_cd)
+    agregar_tabla_markdown(contenido_jugadores, "Juegos en Early Access", tabla_jug_ea, n_jug_ea)
+    agregar_tabla_markdown(contenido_jugadores, "Juegos en Completo Directo", tabla_jug_cd, n_jug_cd)
 
     generar_barras_dobles_desde_tablas(
         tabla_ea=tabla_jug_ea,
@@ -412,11 +449,14 @@ def main():
         titulo="Frecuencias - Jugadores promedio",
         nombre_archivo="frecuencias_jugadores_promedio_barras.png",
     )
-    md_content.append("## Visualización - Jugadores Promedio\n\n")
-    md_content.append("![Barras de jugadores promedio](../images/frecuencias_jugadores_promedio_barras.png)\n\n")
+    contenido_jugadores.append("### Visualización\n\n")
+    contenido_jugadores.append("![Barras de jugadores promedio](../../images/frecuencias_jugadores_promedio_barras.png)\n\n")
+    reportes_generados.append(
+        guardar_reporte_variable("jugadores_promedio", "Jugadores Promedio", contenido_jugadores)
+    )
 
     # ---------- Soporte multiplataforma ----------
-    md_content.append("## Soporte Multiplataforma\n\n")
+    contenido_soporte = []
     soporte_ea = early_access["soporte_multiplataforma"].explode()
     soporte_cd = completo_directo["soporte_multiplataforma"].explode()
     orden_plataformas = sorted(pd.concat([soporte_ea, soporte_cd]).dropna().astype(str).unique().tolist())
@@ -424,8 +464,8 @@ def main():
     tabla_plat_ea, n_plat_ea = generar_tabla_frecuencias_categorias(soporte_ea, orden=orden_plataformas)
     tabla_plat_cd, n_plat_cd = generar_tabla_frecuencias_categorias(soporte_cd, orden=orden_plataformas)
 
-    agregar_tabla_markdown(md_content, "Juegos en Early Access (ocurrencias)", tabla_plat_ea, n_plat_ea)
-    agregar_tabla_markdown(md_content, "Juegos en Completo Directo (ocurrencias)", tabla_plat_cd, n_plat_cd)
+    agregar_tabla_markdown(contenido_soporte, "Juegos en Early Access (ocurrencias)", tabla_plat_ea, n_plat_ea)
+    agregar_tabla_markdown(contenido_soporte, "Juegos en Completo Directo (ocurrencias)", tabla_plat_cd, n_plat_cd)
 
     generar_dot_plot_doble_desde_tablas(
         tabla_ea=tabla_plat_ea,
@@ -435,11 +475,14 @@ def main():
         titulo_cd="Completo Directo - Dot Plot soporte multiplataforma",
         nombre_archivo="frecuencias_soporte_plataforma_dotplot.png",
     )
-    md_content.append("## Visualización - Soporte Multiplataforma\n\n")
-    md_content.append("![Dot plot de soporte multiplataforma](../images/frecuencias_soporte_plataforma_dotplot.png)\n\n")
+    contenido_soporte.append("### Visualización\n\n")
+    contenido_soporte.append("![Dot plot de soporte multiplataforma](../../images/frecuencias_soporte_plataforma_dotplot.png)\n\n")
+    reportes_generados.append(
+        guardar_reporte_variable("soporte_multiplataforma", "Soporte Multiplataforma", contenido_soporte)
+    )
 
     # ---------- Género principal ----------
-    md_content.append("## Género Principal\n\n")
+    contenido_genero = []
     orden_generos = sorted(data["genero_principal"].dropna().astype(str).unique().tolist())
 
     tabla_genero_ea, n_genero_ea = generar_tabla_frecuencias_categorias(
@@ -449,8 +492,8 @@ def main():
         completo_directo["genero_principal"], orden=orden_generos
     )
 
-    agregar_tabla_markdown(md_content, "Juegos en Early Access", tabla_genero_ea, n_genero_ea)
-    agregar_tabla_markdown(md_content, "Juegos en Completo Directo", tabla_genero_cd, n_genero_cd)
+    agregar_tabla_markdown(contenido_genero, "Juegos en Early Access", tabla_genero_ea, n_genero_ea)
+    agregar_tabla_markdown(contenido_genero, "Juegos en Completo Directo", tabla_genero_cd, n_genero_cd)
 
     generar_dot_plot_doble_desde_tablas(
         tabla_ea=tabla_genero_ea,
@@ -460,15 +503,27 @@ def main():
         titulo_cd="Completo Directo - Dot Plot género principal",
         nombre_archivo="frecuencias_genero_principal_dotplot.png",
     )
-    md_content.append("## Visualización - Género Principal\n\n")
-    md_content.append("![Dot plot de género principal](../images/frecuencias_genero_principal_dotplot.png)\n\n")
+    contenido_genero.append("### Visualización\n\n")
+    contenido_genero.append("![Dot plot de género principal](../../images/frecuencias_genero_principal_dotplot.png)\n\n")
+    reportes_generados.append(
+        guardar_reporte_variable("genero_principal", "Género Principal", contenido_genero)
+    )
 
-    reporte_path = REPORTES_DIR / "frecuencias.md"
-    with open(reporte_path, "w", encoding="utf-8") as f:
-        f.write("".join(md_content))
+    index_lines = ["# Reportes por Variable\n\n"]
+    index_lines.append("Estos reportes contienen el ítem de frecuencias por variable.\n\n")
+    for path in reportes_generados:
+        index_lines.append(f"- [{path.stem}](variables/{path.name})\n")
 
-    print("Archivo frecuencias.md generado correctamente")
-    print(f"Reporte guardado en: {reporte_path}")
+    index_path = REPORTES_DIR / "index.md"
+    with open(index_path, "w", encoding="utf-8") as f:
+        f.write("".join(index_lines))
+
+    legacy_path = REPORTES_DIR / "frecuencias.md"
+    if legacy_path.exists():
+        legacy_path.unlink()
+
+    print("Reportes de frecuencias por variable generados correctamente")
+    print(f"Índice guardado en: {index_path}")
 
 
 if __name__ == "__main__":

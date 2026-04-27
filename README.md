@@ -19,4 +19,4 @@ chmod +x install.sh boot.sh
 ./boot.sh
 ```
 
-El reporte se genera en `reportes/frecuencias.md` y las imágenes en `images/`.
+Los reportes se generan por variable en `reportes/variables/`, con un índice en `reportes/index.md`, y las imágenes en `images/`.
