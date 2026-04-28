@@ -158,6 +158,26 @@ def guardar_reporte_variable(nombre_archivo: str, titulo_variable: str, contenid
     return reporte_path
 
 
+def guardar_reporte_dispersogramas(contenido: list[str]):
+    """Guarda un reporte Markdown consolidado de dispersogramas."""
+    md = []
+    md.append("# Informe de Dispersogramas\n\n")
+    md.append("## Visualizaciones\n\n")
+    md.extend(contenido)
+
+    reporte_path = REPORTES_DIR / "dispersogramas.md"
+    with open(reporte_path, "w", encoding="utf-8") as f:
+        f.write("".join(md))
+
+    return reporte_path
+
+
+def agregar_nota_conjunto(md_content: list[str], total: int, early_access: int, completo_directo: int):
+    md_content.append(
+        f"El conjunto actual contiene {total} juegos: {early_access} en Early Access y {completo_directo} en Completo Directo.\n\n"
+    )
+
+
 def generar_histograma_doble(
     valores_ea: pd.Series,
     valores_cd: pd.Series,
@@ -696,16 +716,87 @@ def generar_boxplot_horizontal_comparativo(
     return output_path
 
 
+def generar_dispersograma_continuo(
+    valores_ea: pd.Series,
+    valores_cd: pd.Series,
+    y_label: str,
+    nombre_archivo: str,
+):
+    """Genera dispersogramas separados para Early Access y Completo Directo."""
+    fig, axes = plt.subplots(1, 2, figsize=(14, 5), sharey=True)
+
+    for ax, valores, titulo, color in [
+        (axes[0], valores_ea, "Early Access", "skyblue"),
+        (axes[1], valores_cd, "Completo Directo", "coral"),
+    ]:
+        serie = valores.reset_index(drop=True)
+        x_pos = list(range(1, len(serie) + 1))
+
+        if len(serie) > 0:
+            ax.scatter(x_pos, serie, s=65, color=color, edgecolor="black", alpha=0.8)
+
+        ax.set_xlabel("Índice del juego")
+        ax.set_ylabel(y_label)
+        ax.set_title(f"{titulo} - Dispersograma")
+        ax.grid(True, alpha=0.3)
+
+    plt.tight_layout()
+    output_path = IMAGES_DIR / nombre_archivo
+    plt.savefig(output_path, dpi=150, bbox_inches="tight")
+    plt.close()
+    return output_path
+
+
+def generar_dispersograma_categorico(
+    valores_ea: pd.Series,
+    valores_cd: pd.Series,
+    categorias: list[str],
+    y_label: str,
+    nombre_archivo: str,
+):
+    """Genera dispersogramas para variables categóricas usando codificación ordinal."""
+    fig, axes = plt.subplots(1, 2, figsize=(14, 5), sharey=True)
+    mapa = {categoria: indice for indice, categoria in enumerate(categorias)}
+
+    for ax, valores, titulo, color in [
+        (axes[0], valores_ea, "Early Access", "skyblue"),
+        (axes[1], valores_cd, "Completo Directo", "coral"),
+    ]:
+        serie = valores.dropna().astype(str).reset_index(drop=True)
+        x_pos = list(range(1, len(serie) + 1))
+        y_pos = [mapa.get(valor, 0) for valor in serie]
+
+        if y_pos:
+            ax.scatter(x_pos, y_pos, s=65, color=color, edgecolor="black", alpha=0.8)
+
+        ax.set_yticks(list(mapa.values()))
+        ax.set_yticklabels(categorias)
+        ax.set_xlabel("Índice del juego")
+        ax.set_ylabel(y_label)
+        ax.set_title(f"{titulo} - Dispersograma")
+        ax.grid(True, alpha=0.3)
+
+    plt.tight_layout()
+    output_path = IMAGES_DIR / nombre_archivo
+    plt.savefig(output_path, dpi=150, bbox_inches="tight")
+    plt.close()
+    return output_path
+
+
 def main():
     data = pd.read_json(BASE_DIR / "data.json")
 
     early_access = data[data["estado_lanzamiento"] == "Early Access"]
     completo_directo = data[data["estado_lanzamiento"] == "Completo Directo"]
+    nota_conjunto = (
+        f"El conjunto actual contiene {len(data)} juegos: {len(early_access)} en Early Access y {len(completo_directo)} en Completo Directo.\n\n"
+    )
 
     reportes_generados = []
 
     # ---------- Precio base ----------
     contenido_precio = []
+    contenido_precio.append(nota_conjunto)
     bins_precio = [0, 10, 20, 30, 40, 50, 60]
 
     precio_ea = early_access["precio_base_usd"]
@@ -795,12 +886,22 @@ def main():
         "![Boxplot comparativo de precio base](../../images/frecuencias_precio_boxplot_comparativo.png)\n\n"
     )
 
+    generar_dispersograma_continuo(
+        valores_ea=precio_ea,
+        valores_cd=precio_cd,
+        y_label="Precio base (USD$)",
+        nombre_archivo="frecuencias_precio_dispersograma.png",
+    )
+    contenido_precio.append("### Visualización - Dispersograma\n\n")
+    contenido_precio.append("![Dispersograma de precio base](../../images/frecuencias_precio_dispersograma.png)\n\n")
+
     reportes_generados.append(
         guardar_reporte_variable("precio_base_usd", "Precio Base (USD)", contenido_precio)
     )
 
     # ---------- Porcentaje de reseñas positivas ----------
     contenido_resenas = []
+    contenido_resenas.append(nota_conjunto)
     resenas_ea = early_access["porcentaje_resenas_positivas"]
     resenas_cd = completo_directo["porcentaje_resenas_positivas"]
     resenas_total = pd.concat([resenas_ea, resenas_cd], ignore_index=True)
@@ -896,6 +997,17 @@ def main():
         "![Boxplot comparativo de porcentaje de reseñas positivas](../../images/frecuencias_resenas_boxplot_comparativo.png)\n\n"
     )
 
+    generar_dispersograma_continuo(
+        valores_ea=resenas_ea,
+        valores_cd=resenas_cd,
+        y_label="Porcentaje de reseñas positivas (%)",
+        nombre_archivo="frecuencias_resenas_dispersograma.png",
+    )
+    contenido_resenas.append("### Visualización - Dispersograma\n\n")
+    contenido_resenas.append(
+        "![Dispersograma de porcentaje de reseñas positivas](../../images/frecuencias_resenas_dispersograma.png)\n\n"
+    )
+
     reportes_generados.append(
         guardar_reporte_variable(
             "porcentaje_resenas_positivas",
@@ -906,6 +1018,7 @@ def main():
 
     # ---------- Categorías de reseñas ----------
     contenido_cat_resenas = []
+    contenido_cat_resenas.append(nota_conjunto)
     orden_resenas = [
         "No User Reviews",
         "Overwhelmingly Negative",
@@ -970,12 +1083,25 @@ def main():
     )
     contenido_cat_resenas.append("![Ojivas comparativas de categorías de reseñas](../../images/frecuencias_categoria_resenas_ojivas_comparativas.png)\n\n")
 
+    generar_dispersograma_categorico(
+        valores_ea=early_access["categoria_resenas"],
+        valores_cd=completo_directo["categoria_resenas"],
+        categorias=orden_resenas,
+        y_label="Categoría de reseñas",
+        nombre_archivo="frecuencias_categoria_resenas_dispersograma.png",
+    )
+    contenido_cat_resenas.append("### Visualización - Dispersograma\n\n")
+    contenido_cat_resenas.append(
+        "![Dispersograma de categorías de reseñas](../../images/frecuencias_categoria_resenas_dispersograma.png)\n\n"
+    )
+
     reportes_generados.append(
         guardar_reporte_variable("categoria_resenas", "Categorías de Reseñas", contenido_cat_resenas)
     )
 
     # ---------- Pico histórico de concurrentes ----------
     contenido_pico = []
+    contenido_pico.append(nota_conjunto)
     pico_total = pd.concat(
         [
             early_access["pico_historico_concurrentes"],
@@ -1079,6 +1205,17 @@ def main():
         "![Boxplot comparativo de pico histórico de concurrentes](../../images/frecuencias_pico_historico_boxplot_comparativo.png)\n\n"
     )
 
+    generar_dispersograma_continuo(
+        valores_ea=early_access["pico_historico_concurrentes"],
+        valores_cd=completo_directo["pico_historico_concurrentes"],
+        y_label="Pico histórico de concurrentes",
+        nombre_archivo="frecuencias_pico_historico_dispersograma.png",
+    )
+    contenido_pico.append("### Visualización - Dispersograma\n\n")
+    contenido_pico.append(
+        "![Dispersograma de pico histórico de concurrentes](../../images/frecuencias_pico_historico_dispersograma.png)\n\n"
+    )
+
     reportes_generados.append(
         guardar_reporte_variable(
             "pico_historico_concurrentes",
@@ -1089,6 +1226,7 @@ def main():
 
     # ---------- Jugadores promedio ----------
     contenido_jugadores = []
+    contenido_jugadores.append(nota_conjunto)
     jug_total = pd.concat(
         [
             early_access["jugadores_promedio"],
@@ -1186,12 +1324,24 @@ def main():
     contenido_jugadores.append("### Visualización - Boxplot Comparativo\n\n")
     contenido_jugadores.append("![Boxplot comparativo de jugadores promedio](../../images/frecuencias_jugadores_promedio_boxplot_comparativo.png)\n\n")
 
+    generar_dispersograma_continuo(
+        valores_ea=early_access["jugadores_promedio"],
+        valores_cd=completo_directo["jugadores_promedio"],
+        y_label="Jugadores promedio",
+        nombre_archivo="frecuencias_jugadores_promedio_dispersograma.png",
+    )
+    contenido_jugadores.append("### Visualización - Dispersograma\n\n")
+    contenido_jugadores.append(
+        "![Dispersograma de jugadores promedio](../../images/frecuencias_jugadores_promedio_dispersograma.png)\n\n"
+    )
+
     reportes_generados.append(
         guardar_reporte_variable("jugadores_promedio", "Jugadores Promedio", contenido_jugadores)
     )
 
     # ---------- Soporte multiplataforma ----------
     contenido_soporte = []
+    contenido_soporte.append(nota_conjunto)
     soporte_ea = early_access["soporte_multiplataforma"].explode()
     soporte_cd = completo_directo["soporte_multiplataforma"].explode()
     orden_plataformas = sorted(pd.concat([soporte_ea, soporte_cd]).dropna().astype(str).unique().tolist())
@@ -1213,12 +1363,25 @@ def main():
     contenido_soporte.append(
         "![Barras comparativas de soporte multiplataforma](../../images/frecuencias_soporte_multiplataforma_barras_comparativas.png)\n\n"
     )
+
+    generar_dispersograma_categorico(
+        valores_ea=soporte_ea,
+        valores_cd=soporte_cd,
+        categorias=orden_plataformas,
+        y_label="Plataforma",
+        nombre_archivo="frecuencias_soporte_multiplataforma_dispersograma.png",
+    )
+    contenido_soporte.append("### Visualización - Dispersograma\n\n")
+    contenido_soporte.append(
+        "![Dispersograma de soporte multiplataforma](../../images/frecuencias_soporte_multiplataforma_dispersograma.png)\n\n"
+    )
     reportes_generados.append(
         guardar_reporte_variable("soporte_multiplataforma", "Soporte Multiplataforma", contenido_soporte)
     )
 
     # ---------- Género principal ----------
     contenido_genero = []
+    contenido_genero.append(nota_conjunto)
     orden_generos = sorted(data["genero_principal"].dropna().astype(str).unique().tolist())
 
     tabla_genero_ea, n_genero_ea = generar_tabla_frecuencias_categorias(
@@ -1240,14 +1403,47 @@ def main():
     )
     contenido_genero.append("### Visualización\n\n")
     contenido_genero.append("![Barras comparativas de género principal](../../images/frecuencias_genero_principal_barras_comparativas.png)\n\n")
+
+    generar_dispersograma_categorico(
+        valores_ea=early_access["genero_principal"],
+        valores_cd=completo_directo["genero_principal"],
+        categorias=orden_generos,
+        y_label="Género principal",
+        nombre_archivo="frecuencias_genero_principal_dispersograma.png",
+    )
+    contenido_genero.append("### Visualización - Dispersograma\n\n")
+    contenido_genero.append(
+        "![Dispersograma de género principal](../../images/frecuencias_genero_principal_dispersograma.png)\n\n"
+    )
     reportes_generados.append(
         guardar_reporte_variable("genero_principal", "Género Principal", contenido_genero)
     )
 
+    contenido_dispersogramas = [
+        f"El informe reúne los dispersogramas del conjunto actual de {len(data)} juegos.\n\n",
+        "### Precio Base (USD)\n\n",
+        "![Dispersograma de precio base](../images/frecuencias_precio_dispersograma.png)\n\n",
+        "### Porcentaje de Reseñas Positivas\n\n",
+        "![Dispersograma de porcentaje de reseñas positivas](../images/frecuencias_resenas_dispersograma.png)\n\n",
+        "### Categorías de Reseñas\n\n",
+        "![Dispersograma de categorías de reseñas](../images/frecuencias_categoria_resenas_dispersograma.png)\n\n",
+        "### Pico Histórico de Concurrentes\n\n",
+        "![Dispersograma de pico histórico de concurrentes](../images/frecuencias_pico_historico_dispersograma.png)\n\n",
+        "### Jugadores Promedio\n\n",
+        "![Dispersograma de jugadores promedio](../images/frecuencias_jugadores_promedio_dispersograma.png)\n\n",
+        "### Soporte Multiplataforma\n\n",
+        "![Dispersograma de soporte multiplataforma](../images/frecuencias_soporte_multiplataforma_dispersograma.png)\n\n",
+        "### Género Principal\n\n",
+        "![Dispersograma de género principal](../images/frecuencias_genero_principal_dispersograma.png)\n\n",
+    ]
+
+    reportes_generados.append(guardar_reporte_dispersogramas(contenido_dispersogramas))
+
     index_lines = ["# Reportes por Variable\n\n"]
     index_lines.append("Estos reportes contienen el ítem de frecuencias por variable.\n\n")
     for path in reportes_generados:
-        index_lines.append(f"- [{path.stem}](variables/{path.name})\n")
+        relative_path = path.relative_to(REPORTES_DIR).as_posix()
+        index_lines.append(f"- [{path.stem}]({relative_path})\n")
 
     index_path = REPORTES_DIR / "index.md"
     with open(index_path, "w", encoding="utf-8") as f:

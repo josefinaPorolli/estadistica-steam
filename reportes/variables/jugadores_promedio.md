@@ -2,29 +2,23 @@
 
 ## Frecuencias
 
+El conjunto actual contiene 44 juegos: 19 en Early Access y 25 en Completo Directo.
+
 ### Juegos en Early Access
 | Categoría / Intervalo | fi | hi | Fi | Hi |
 |---|---:|---:|---:|---:|
-| [0.0, 7841.0) | 4 | 1.0 | 4 | 1.0 |
-| [7841.0, 15682.0) | 0 | 0.0 | 4 | 1.0 |
-| [15682.0, 23523.0) | 0 | 0.0 | 4 | 1.0 |
-| [23523.0, 31364.0) | 0 | 0.0 | 4 | 1.0 |
-| [31364.0, 39205.0) | 0 | 0.0 | 4 | 1.0 |
-| [39205.0, 47046.0) | 0 | 0.0 | 4 | 1.0 |
+| [0.0, 1.0) | 19 | 1.0 | 19 | 1.0 |
+| [1.0, 2.0) | 0 | 0.0 | 19 | 1.0 |
 
-**Total de juegos:** 4
+**Total de juegos:** 19
 
 ### Juegos en Completo Directo
 | Categoría / Intervalo | fi | hi | Fi | Hi |
 |---|---:|---:|---:|---:|
-| [0.0, 7841.0) | 4 | 0.667 | 4 | 0.667 |
-| [7841.0, 15682.0) | 1 | 0.167 | 5 | 0.833 |
-| [15682.0, 23523.0) | 0 | 0.0 | 5 | 0.833 |
-| [23523.0, 31364.0) | 0 | 0.0 | 5 | 0.833 |
-| [31364.0, 39205.0) | 1 | 0.167 | 6 | 1.0 |
-| [39205.0, 47046.0) | 0 | 0.0 | 6 | 1.0 |
+| [0.0, 1.0) | 25 | 1.0 | 25 | 1.0 |
+| [1.0, 2.0) | 0 | 0.0 | 25 | 1.0 |
 
-**Total de juegos:** 6
+**Total de juegos:** 25
 
 ### Visualización - Gráficos de Barras
 
@@ -51,4 +45,8 @@
 ### Visualización - Boxplot Comparativo
 
 ![Boxplot comparativo de jugadores promedio](../../images/frecuencias_jugadores_promedio_boxplot_comparativo.png)
+
+### Visualización - Dispersograma
+
+![Dispersograma de jugadores promedio](../../images/frecuencias_jugadores_promedio_dispersograma.png)
 
