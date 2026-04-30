@@ -9,3 +9,4 @@ Estos reportes contienen el ítem de frecuencias por variable.
 - [jugadores_promedio](variables/jugadores_promedio.md)
 - [soporte_multiplataforma](variables/soporte_multiplataforma.md)
 - [genero_principal](variables/genero_principal.md)
+- [dispersogramas](dispersogramas.md)

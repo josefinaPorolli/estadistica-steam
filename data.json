@@ -5,22 +5,27 @@
         "precio_base_usd": 0,
         "porcentaje_resenas_positivas": 86.7,
         "categoria_resenas": "Very Positive",
-        "pico_historico_concurrentes": 1013936,
-        "jugadores_promedio": 33597,
+        "pico_historico_concurrentes": 1862531,
+        "jugadores_promedio": 1373891,
         "estado_lanzamiento": "Completo Directo",
-        "soporte_multiplataforma": ["Windows", "Linux"],
+        "soporte_multiplataforma": [
+            "Windows",
+            "Linux"
+        ],
         "genero_principal": "Action"
     },
     {
         "app_id": 271590,
         "nombre": "Grand Theft Auto V Legacy",
-        "precio_base_usd": 29.99,
+        "precio_base_usd": 0,
         "porcentaje_resenas_positivas": 87.4,
         "categoria_resenas": "Very Positive",
-        "pico_historico_concurrentes": 67851,
-        "jugadores_promedio": 14589,
+        "pico_historico_concurrentes": 364548,
+        "jugadores_promedio": 86962,
         "estado_lanzamiento": "Completo Directo",
-        "soporte_multiplataforma": ["Windows"],
+        "soporte_multiplataforma": [
+            "Windows"
+        ],
         "genero_principal": "Action"
     },
     {
@@ -29,10 +34,12 @@
         "precio_base_usd": 39.99,
         "porcentaje_resenas_positivas": 96.1,
         "categoria_resenas": "Overwhelmingly Positive",
-        "pico_historico_concurrentes": 15893,
-        "jugadores_promedio": 3662,
+        "pico_historico_concurrentes": 103329,
+        "jugadores_promedio": 15883,
         "estado_lanzamiento": "Completo Directo",
-        "soporte_multiplataforma": ["Windows"],
+        "soporte_multiplataforma": [
+            "Windows"
+        ],
         "genero_principal": "RPG"
     },
     {
@@ -41,11 +48,14 @@
         "precio_base_usd": 59.99,
         "porcentaje_resenas_positivas": 84.4,
         "categoria_resenas": "Very Positive",
-        "pico_historico_concurrentes": 22265,
-        "jugadores_promedio": 4922,
+        "pico_historico_concurrentes": 1054388,
+        "jugadores_promedio": 33391,
         "estado_lanzamiento": "Completo Directo",
-        "soporte_multiplataforma": ["Windows", "Mac"],
-        "genero_principal": "RPG"
+        "soporte_multiplataforma": [
+            "Windows",
+            "Mac"
+        ],
+        "genero_principal": "Action"
     },
     {
         "app_id": 367520,
@@ -53,11 +63,312 @@
         "precio_base_usd": 14.99,
         "porcentaje_resenas_positivas": 97.0,
         "categoria_resenas": "Overwhelmingly Positive",
-        "pico_historico_concurrentes": 4912,
-        "jugadores_promedio": 2235,
+        "pico_historico_concurrentes": 95655,
+        "jugadores_promedio": 7045,
         "estado_lanzamiento": "Completo Directo",
-        "soporte_multiplataforma": ["Windows", "Mac", "Linux"],
+        "soporte_multiplataforma": [
+            "Windows",
+            "Mac",
+            "Linux"
+        ],
         "genero_principal": "Action"
+    },
+    {
+        "app_id": 1245620,
+        "nombre": "Elden Ring",
+        "precio_base_usd": 59.99,
+        "porcentaje_resenas_positivas": 92.9,
+        "categoria_resenas": "Very Positive",
+        "pico_historico_concurrentes": 953426,
+        "jugadores_promedio": 31478,
+        "estado_lanzamiento": "Completo Directo",
+        "soporte_multiplataforma": [
+            "Windows"
+        ],
+        "genero_principal": "Action"
+    },
+    {
+        "app_id": 1174180,
+        "nombre": "Red Dead Redemption 2",
+        "precio_base_usd": 59.99,
+        "porcentaje_resenas_positivas": 92.2,
+        "categoria_resenas": "Very Positive",
+        "pico_historico_concurrentes": 99993,
+        "jugadores_promedio": 25670,
+        "estado_lanzamiento": "Completo Directo",
+        "soporte_multiplataforma": [
+            "Windows"
+        ],
+        "genero_principal": "Action"
+    },
+    {
+        "app_id": 105600,
+        "nombre": "Terraria",
+        "precio_base_usd": 9.99,
+        "porcentaje_resenas_positivas": 97.5,
+        "categoria_resenas": "Overwhelmingly Positive",
+        "pico_historico_concurrentes": 489886,
+        "jugadores_promedio": 24814,
+        "estado_lanzamiento": "Completo Directo",
+        "soporte_multiplataforma": [
+            "Windows",
+            "Mac",
+            "Linux"
+        ],
+        "genero_principal": "Action"
+    },
+    {
+        "app_id": 413150,
+        "nombre": "Stardew Valley",
+        "precio_base_usd": 14.99,
+        "porcentaje_resenas_positivas": 98.4,
+        "categoria_resenas": "Overwhelmingly Positive",
+        "pico_historico_concurrentes": 236614,
+        "jugadores_promedio": 48693,
+        "estado_lanzamiento": "Completo Directo",
+        "soporte_multiplataforma": [
+            "Windows",
+            "Mac",
+            "Linux"
+        ],
+        "genero_principal": "Indie"
+    },
+    {
+        "app_id": 620,
+        "nombre": "Portal 2",
+        "precio_base_usd": 9.99,
+        "porcentaje_resenas_positivas": 98.7,
+        "categoria_resenas": "Overwhelmingly Positive",
+        "pico_historico_concurrentes": 98460,
+        "jugadores_promedio": 2130,
+        "estado_lanzamiento": "Completo Directo",
+        "soporte_multiplataforma": [
+            "Windows",
+            "Linux"
+        ],
+        "genero_principal": "Action"
+    },
+    {
+        "app_id": 553850,
+        "nombre": "HELLDIVERS™ 2",
+        "precio_base_usd": 39.99,
+        "porcentaje_resenas_positivas": 76.2,
+        "categoria_resenas": "Mostly Positive",
+        "pico_historico_concurrentes": 458709,
+        "jugadores_promedio": 47719,
+        "estado_lanzamiento": "Completo Directo",
+        "soporte_multiplataforma": [
+            "Windows"
+        ],
+        "genero_principal": "Action"
+    },
+    {
+        "app_id": 582010,
+        "nombre": "Monster Hunter: World",
+        "precio_base_usd": 29.99,
+        "porcentaje_resenas_positivas": 88.0,
+        "categoria_resenas": "Very Positive",
+        "pico_historico_concurrentes": 334684,
+        "jugadores_promedio": 9408,
+        "estado_lanzamiento": "Completo Directo",
+        "soporte_multiplataforma": [
+            "Windows"
+        ],
+        "genero_principal": "Action"
+    },
+    {
+        "app_id": 814380,
+        "nombre": "Sekiro™: Shadows Die Twice",
+        "precio_base_usd": 59.99,
+        "porcentaje_resenas_positivas": 95.3,
+        "categoria_resenas": "Overwhelmingly Positive",
+        "pico_historico_concurrentes": 125315,
+        "jugadores_promedio": 2829,
+        "estado_lanzamiento": "Completo Directo",
+        "soporte_multiplataforma": [
+            "Windows"
+        ],
+        "genero_principal": "Action"
+    },
+    {
+        "app_id": 489830,
+        "nombre": "The Elder Scrolls V: Skyrim Special Edition",
+        "precio_base_usd": 39.99,
+        "porcentaje_resenas_positivas": 92.0,
+        "categoria_resenas": "Very Positive",
+        "pico_historico_concurrentes": 69906,
+        "jugadores_promedio": 24025,
+        "estado_lanzamiento": "Completo Directo",
+        "soporte_multiplataforma": [
+            "Windows"
+        ],
+        "genero_principal": "RPG"
+    },
+    {
+        "app_id": 377160,
+        "nombre": "Fallout 4",
+        "precio_base_usd": 19.99,
+        "porcentaje_resenas_positivas": 83.1,
+        "categoria_resenas": "Very Positive",
+        "pico_historico_concurrentes": 472962,
+        "jugadores_promedio": 13195,
+        "estado_lanzamiento": "Completo Directo",
+        "soporte_multiplataforma": [
+            "Windows"
+        ],
+        "genero_principal": "RPG"
+    },
+    {
+        "app_id": 782330,
+        "nombre": "DOOM Eternal",
+        "precio_base_usd": 39.99,
+        "porcentaje_resenas_positivas": 91.2,
+        "categoria_resenas": "Very Positive",
+        "pico_historico_concurrentes": 104891,
+        "jugadores_promedio": 1086,
+        "estado_lanzamiento": "Completo Directo",
+        "soporte_multiplataforma": [
+            "Windows"
+        ],
+        "genero_principal": "Action"
+    },
+    {
+        "app_id": 1086940,
+        "nombre": "Baldur's Gate 3",
+        "precio_base_usd": 59.99,
+        "porcentaje_resenas_positivas": 96.8,
+        "categoria_resenas": "Overwhelmingly Positive",
+        "pico_historico_concurrentes": 875343,
+        "jugadores_promedio": 43878,
+        "estado_lanzamiento": "Completo Directo",
+        "soporte_multiplataforma": [
+            "Windows"
+        ],
+        "genero_principal": "RPG"
+    },
+    {
+        "app_id": 252490,
+        "nombre": "Rust",
+        "precio_base_usd": 39.99,
+        "porcentaje_resenas_positivas": 87.2,
+        "categoria_resenas": "Very Positive",
+        "pico_historico_concurrentes": 262284,
+        "jugadores_promedio": 141091,
+        "estado_lanzamiento": "Completo Directo",
+        "soporte_multiplataforma": [
+            "Windows",
+            "Mac",
+            "Linux"
+        ],
+        "genero_principal": "Action"
+    },
+    {
+        "app_id": 264710,
+        "nombre": "Subnautica",
+        "precio_base_usd": 29.99,
+        "porcentaje_resenas_positivas": 97.0,
+        "categoria_resenas": "Overwhelmingly Positive",
+        "pico_historico_concurrentes": 51156,
+        "jugadores_promedio": 6349,
+        "estado_lanzamiento": "Completo Directo",
+        "soporte_multiplataforma": [
+            "Windows",
+            "Mac",
+            "Linux"
+        ],
+        "genero_principal": "Adventure"
+    },
+    {
+        "app_id": 427520,
+        "nombre": "Factorio",
+        "precio_base_usd": 35,
+        "porcentaje_resenas_positivas": 97.0,
+        "categoria_resenas": "Overwhelmingly Positive",
+        "pico_historico_concurrentes": 118674,
+        "jugadores_promedio": 19019,
+        "estado_lanzamiento": "Completo Directo",
+        "soporte_multiplataforma": [
+            "Windows",
+            "Mac",
+            "Linux"
+        ],
+        "genero_principal": "Casual"
+    },
+    {
+        "app_id": 1145360,
+        "nombre": "Hades",
+        "precio_base_usd": 24.99,
+        "porcentaje_resenas_positivas": 98.2,
+        "categoria_resenas": "Overwhelmingly Positive",
+        "pico_historico_concurrentes": 54240,
+        "jugadores_promedio": 5373,
+        "estado_lanzamiento": "Completo Directo",
+        "soporte_multiplataforma": [
+            "Windows",
+            "Mac",
+            "Linux"
+        ],
+        "genero_principal": "Action"
+    },
+    {
+        "app_id": 2144740,
+        "nombre": "Ghostrunner 2",
+        "precio_base_usd": 39.99,
+        "porcentaje_resenas_positivas": 80.7,
+        "categoria_resenas": "Very Positive",
+        "pico_historico_concurrentes": 2264,
+        "jugadores_promedio": 87,
+        "estado_lanzamiento": "Completo Directo",
+        "soporte_multiplataforma": [
+            "Windows"
+        ],
+        "genero_principal": "Action"
+    },
+    {
+        "app_id": 805550,
+        "nombre": "Assetto Corsa Competizione",
+        "precio_base_usd": 39.99,
+        "porcentaje_resenas_positivas": 92.5,
+        "categoria_resenas": "Very Positive",
+        "pico_historico_concurrentes": 12376,
+        "jugadores_promedio": 4188,
+        "estado_lanzamiento": "Completo Directo",
+        "soporte_multiplataforma": [
+            "Windows"
+        ],
+        "genero_principal": "Racing"
+    },
+    {
+        "app_id": 250900,
+        "nombre": "The Binding of Isaac: Rebirth",
+        "precio_base_usd": 14.99,
+        "porcentaje_resenas_positivas": 97.3,
+        "categoria_resenas": "Overwhelmingly Positive",
+        "pico_historico_concurrentes": 70701,
+        "jugadores_promedio": 20359,
+        "estado_lanzamiento": "Completo Directo",
+        "soporte_multiplataforma": [
+            "Windows",
+            "Mac",
+            "Linux"
+        ],
+        "genero_principal": "Action"
+    },
+    {
+        "app_id": 289070,
+        "nombre": "Sid Meier's Civilization VI",
+        "precio_base_usd": 59.99,
+        "porcentaje_resenas_positivas": 86.9,
+        "categoria_resenas": "Very Positive",
+        "pico_historico_concurrentes": 162657,
+        "jugadores_promedio": 30049,
+        "estado_lanzamiento": "Completo Directo",
+        "soporte_multiplataforma": [
+            "Windows",
+            "Mac",
+            "Linux"
+        ],
+        "genero_principal": "Strategy"
     },
     {
         "app_id": 1623730,
@@ -65,23 +376,27 @@
         "precio_base_usd": 29.99,
         "porcentaje_resenas_positivas": 94.1,
         "categoria_resenas": "Very Positive",
-        "pico_historico_concurrentes": 18028,
-        "jugadores_promedio": 3869,
+        "pico_historico_concurrentes": 2101867,
+        "jugadores_promedio": 16199,
         "estado_lanzamiento": "Early Access",
-        "soporte_multiplataforma": ["Windows"],
+        "soporte_multiplataforma": [
+            "Windows"
+        ],
         "genero_principal": "Action"
     },
     {
-        "app_id": 1145350,
-        "nombre": "Hades II",
-        "precio_base_usd": 29.99,
-        "porcentaje_resenas_positivas": 94.9,
-        "categoria_resenas": "Overwhelmingly Positive",
-        "pico_historico_concurrentes": 1838,
-        "jugadores_promedio": 2525,
-        "estado_lanzamiento": "Completo Directo",
-        "soporte_multiplataforma": ["Windows", "Mac"],
-        "genero_principal": "Action"
+        "app_id": 1363080,
+        "nombre": "Manor Lords",
+        "precio_base_usd": 39.99,
+        "porcentaje_resenas_positivas": 86.3,
+        "categoria_resenas": "Very Positive",
+        "pico_historico_concurrentes": 173178,
+        "jugadores_promedio": 4375,
+        "estado_lanzamiento": "Early Access",
+        "soporte_multiplataforma": [
+            "Windows"
+        ],
+        "genero_principal": "Simulation"
     },
     {
         "app_id": 892970,
@@ -89,10 +404,14 @@
         "precio_base_usd": 19.99,
         "porcentaje_resenas_positivas": 94.3,
         "categoria_resenas": "Very Positive",
-        "pico_historico_concurrentes": 14439,
-        "jugadores_promedio": 4688,
+        "pico_historico_concurrentes": 502387,
+        "jugadores_promedio": 26073,
         "estado_lanzamiento": "Early Access",
-        "soporte_multiplataforma": ["Windows", "Mac", "Linux"],
+        "soporte_multiplataforma": [
+            "Windows",
+            "Mac",
+            "Linux"
+        ],
         "genero_principal": "Action"
     },
     {
@@ -101,10 +420,12 @@
         "precio_base_usd": 19.99,
         "porcentaje_resenas_positivas": 95.8,
         "categoria_resenas": "Overwhelmingly Positive",
-        "pico_historico_concurrentes": 9978,
-        "jugadores_promedio": 2439,
+        "pico_historico_concurrentes": 112717,
+        "jugadores_promedio": 14682,
         "estado_lanzamiento": "Early Access",
-        "soporte_multiplataforma": ["Windows"],
+        "soporte_multiplataforma": [
+            "Windows"
+        ],
         "genero_principal": "Action"
     },
     {
@@ -113,10 +434,210 @@
         "precio_base_usd": 19.99,
         "porcentaje_resenas_positivas": 94.2,
         "categoria_resenas": "Very Positive",
-        "pico_historico_concurrentes": 22864,
-        "jugadores_promedio": 4215,
+        "pico_historico_concurrentes": 65505,
+        "jugadores_promedio": 29911,
         "estado_lanzamiento": "Early Access",
-        "soporte_multiplataforma": ["Windows", "Mac", "Linux"],
+        "soporte_multiplataforma": [
+            "Windows",
+            "Mac",
+            "Linux"
+        ],
         "genero_principal": "Indie"
+    },
+    {
+        "app_id": 1203620,
+        "nombre": "Enshrouded",
+        "precio_base_usd": 29.99,
+        "porcentaje_resenas_positivas": 86.4,
+        "categoria_resenas": "Very Positive",
+        "pico_historico_concurrentes": 160405,
+        "jugadores_promedio": 19424,
+        "estado_lanzamiento": "Early Access",
+        "soporte_multiplataforma": [
+            "Windows"
+        ],
+        "genero_principal": "Action"
+    },
+    {
+        "app_id": 284160,
+        "nombre": "BeamNG.drive",
+        "precio_base_usd": 24.99,
+        "porcentaje_resenas_positivas": 97.4,
+        "categoria_resenas": "Overwhelmingly Positive",
+        "pico_historico_concurrentes": 38775,
+        "jugadores_promedio": 27477,
+        "estado_lanzamiento": "Early Access",
+        "soporte_multiplataforma": [
+            "Windows"
+        ],
+        "genero_principal": "Racing"
+    },
+    {
+        "app_id": 1812450,
+        "nombre": "Bellwright",
+        "precio_base_usd": 29.99,
+        "porcentaje_resenas_positivas": 80.6,
+        "categoria_resenas": "Very Positive",
+        "pico_historico_concurrentes": 15263,
+        "jugadores_promedio": 3407,
+        "estado_lanzamiento": "Early Access",
+        "soporte_multiplataforma": [
+            "Windows"
+        ],
+        "genero_principal": "Action"
+    },
+    {
+        "app_id": 1366540,
+        "nombre": "Dyson Sphere Program",
+        "precio_base_usd": 19.99,
+        "porcentaje_resenas_positivas": 97.7,
+        "categoria_resenas": "Overwhelmingly Positive",
+        "pico_historico_concurrentes": 59815,
+        "jugadores_promedio": 3036,
+        "estado_lanzamiento": "Early Access",
+        "soporte_multiplataforma": [
+            "Windows"
+        ],
+        "genero_principal": "Indie"
+    },
+    {
+        "app_id": 954850,
+        "nombre": "Kerbal Space Program 2",
+        "precio_base_usd": 49.99,
+        "porcentaje_resenas_positivas": 29.6,
+        "categoria_resenas": "Mostly Negative",
+        "pico_historico_concurrentes": 25724,
+        "jugadores_promedio": 211,
+        "estado_lanzamiento": "Early Access",
+        "soporte_multiplataforma": [
+            "Windows"
+        ],
+        "genero_principal": "Indie"
+    },
+    {
+        "app_id": 1465460,
+        "nombre": "Infection Free Zone",
+        "precio_base_usd": 24.99,
+        "porcentaje_resenas_positivas": 79.0,
+        "categoria_resenas": "Very Positive",
+        "pico_historico_concurrentes": 19380,
+        "jugadores_promedio": 872,
+        "estado_lanzamiento": "Early Access",
+        "soporte_multiplataforma": [
+            "Windows"
+        ],
+        "genero_principal": "Action"
+    },
+    {
+        "app_id": 2309830,
+        "nombre": "ARK: Survival Ascended",
+        "precio_base_usd": 44.99,
+        "porcentaje_resenas_positivas": 59.1,
+        "categoria_resenas": "Mixed",
+        "pico_historico_concurrentes": 98047,
+        "jugadores_promedio": 23690,
+        "estado_lanzamiento": "Early Access",
+        "soporte_multiplataforma": [
+            "Windows"
+        ],
+        "genero_principal": "Action"
+    },
+    {
+        "app_id": 312540,
+        "nombre": "Far Far West",
+        "precio_base_usd": 19.99,
+        "porcentaje_resenas_positivas": 97.8,
+        "categoria_resenas": "Overwhelmingly Positive",
+        "pico_historico_concurrentes": 29248,
+        "jugadores_promedio": 29248,
+        "estado_lanzamiento": "Early Access",
+        "soporte_multiplataforma": [
+            "Windows"
+        ],
+        "genero_principal": "Action"
+    },
+    {
+        "app_id": 3041230,
+        "nombre": "Windrose",
+        "precio_base_usd": 29.99,
+        "porcentaje_resenas_positivas": 87.5,
+        "categoria_resenas": "Very Positive",
+        "pico_historico_concurrentes": 222134,
+        "jugadores_promedio": 115537,
+        "estado_lanzamiento": "Early Access",
+        "soporte_multiplataforma": [
+            "Windows"
+        ],
+        "genero_principal": "Action"
+    },
+    {
+        "app_id": 2694490,
+        "nombre": "Path of Exile 2",
+        "precio_base_usd": 29.99,
+        "porcentaje_resenas_positivas": 70.1,
+        "categoria_resenas": "Mostly Positive",
+        "pico_historico_concurrentes": 578569,
+        "jugadores_promedio": 8038,
+        "estado_lanzamiento": "Early Access",
+        "soporte_multiplataforma": [
+            "Windows"
+        ],
+        "genero_principal": "Action"
+    },
+    {
+        "app_id": 438100,
+        "nombre": "VRChat",
+        "precio_base_usd": 0,
+        "porcentaje_resenas_positivas": 75.6,
+        "categoria_resenas": "Very Positive",
+        "pico_historico_concurrentes": 79593,
+        "jugadores_promedio": 44011,
+        "estado_lanzamiento": "Early Access",
+        "soporte_multiplataforma": [
+            "Windows"
+        ],
+        "genero_principal": "Adventure"
+    },
+    {
+        "app_id": 1966720,
+        "nombre": "Lethal Company",
+        "precio_base_usd": 9.99,
+        "porcentaje_resenas_positivas": 97.2,
+        "categoria_resenas": "Overwhelmingly Positive",
+        "pico_historico_concurrentes": 240817,
+        "jugadores_promedio": 6593,
+        "estado_lanzamiento": "Early Access",
+        "soporte_multiplataforma": [
+            "Windows"
+        ],
+        "genero_principal": "Action"
+    },
+    {
+        "app_id": 3164500,
+        "nombre": "Schedule 1",
+        "precio_base_usd": 19.99,
+        "porcentaje_resenas_positivas": 98.4,
+        "categoria_resenas": "Overwhelmingly Positive",
+        "pico_historico_concurrentes": 459075,
+        "jugadores_promedio": 20601,
+        "estado_lanzamiento": "Early Access",
+        "soporte_multiplataforma": [
+            "Windows"
+        ],
+        "genero_principal": "Action"
+    },
+    {
+        "app_id": 3241660,
+        "nombre": "R.E.P.O.",
+        "precio_base_usd": 9.99,
+        "porcentaje_resenas_positivas": 96.5,
+        "categoria_resenas": "Overwhelmingly Positive",
+        "pico_historico_concurrentes": 271571,
+        "jugadores_promedio": 32671,
+        "estado_lanzamiento": "Early Access",
+        "soporte_multiplataforma": [
+            "Windows"
+        ],
+        "genero_principal": "Action"
     }
 ]
