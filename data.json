@@ -5,10 +5,13 @@
         "precio_base_usd": 0,
         "porcentaje_resenas_positivas": 86.7,
         "categoria_resenas": "Very Positive",
-        "pico_historico_concurrentes": 1013936,
-        "jugadores_promedio": 0,
+        "pico_historico_concurrentes": 1862531,
+        "jugadores_promedio": 1373891,
         "estado_lanzamiento": "Completo Directo",
-        "soporte_multiplataforma": ["Windows", "Linux"],
+        "soporte_multiplataforma": [
+            "Windows",
+            "Linux"
+        ],
         "genero_principal": "Action"
     },
     {
@@ -17,10 +20,12 @@
         "precio_base_usd": 0,
         "porcentaje_resenas_positivas": 87.4,
         "categoria_resenas": "Very Positive",
-        "pico_historico_concurrentes": 67851,
-        "jugadores_promedio": 0,
+        "pico_historico_concurrentes": 364548,
+        "jugadores_promedio": 86962,
         "estado_lanzamiento": "Completo Directo",
-        "soporte_multiplataforma": ["Windows"],
+        "soporte_multiplataforma": [
+            "Windows"
+        ],
         "genero_principal": "Action"
     },
     {
@@ -29,10 +34,12 @@
         "precio_base_usd": 39.99,
         "porcentaje_resenas_positivas": 96.1,
         "categoria_resenas": "Overwhelmingly Positive",
-        "pico_historico_concurrentes": 15893,
-        "jugadores_promedio": 0,
+        "pico_historico_concurrentes": 103329,
+        "jugadores_promedio": 15883,
         "estado_lanzamiento": "Completo Directo",
-        "soporte_multiplataforma": ["Windows"],
+        "soporte_multiplataforma": [
+            "Windows"
+        ],
         "genero_principal": "RPG"
     },
     {
@@ -41,10 +48,13 @@
         "precio_base_usd": 59.99,
         "porcentaje_resenas_positivas": 84.4,
         "categoria_resenas": "Very Positive",
-        "pico_historico_concurrentes": 22265,
-        "jugadores_promedio": 0,
+        "pico_historico_concurrentes": 1054388,
+        "jugadores_promedio": 33391,
         "estado_lanzamiento": "Completo Directo",
-        "soporte_multiplataforma": ["Windows", "Mac"],
+        "soporte_multiplataforma": [
+            "Windows",
+            "Mac"
+        ],
         "genero_principal": "Action"
     },
     {
@@ -53,22 +63,28 @@
         "precio_base_usd": 14.99,
         "porcentaje_resenas_positivas": 97.0,
         "categoria_resenas": "Overwhelmingly Positive",
-        "pico_historico_concurrentes": 4912,
-        "jugadores_promedio": 0,
+        "pico_historico_concurrentes": 95655,
+        "jugadores_promedio": 7045,
         "estado_lanzamiento": "Completo Directo",
-        "soporte_multiplataforma": ["Windows", "Mac", "Linux"],
+        "soporte_multiplataforma": [
+            "Windows",
+            "Mac",
+            "Linux"
+        ],
         "genero_principal": "Action"
     },
     {
         "app_id": 1245620,
-        "nombre": "ELDEN RING",
+        "nombre": "Elden Ring",
         "precio_base_usd": 59.99,
         "porcentaje_resenas_positivas": 92.9,
         "categoria_resenas": "Very Positive",
-        "pico_historico_concurrentes": 29529,
-        "jugadores_promedio": 0,
+        "pico_historico_concurrentes": 953426,
+        "jugadores_promedio": 31478,
         "estado_lanzamiento": "Completo Directo",
-        "soporte_multiplataforma": ["Windows"],
+        "soporte_multiplataforma": [
+            "Windows"
+        ],
         "genero_principal": "Action"
     },
     {
@@ -77,10 +93,12 @@
         "precio_base_usd": 59.99,
         "porcentaje_resenas_positivas": 92.2,
         "categoria_resenas": "Very Positive",
-        "pico_historico_concurrentes": 29885,
-        "jugadores_promedio": 0,
+        "pico_historico_concurrentes": 99993,
+        "jugadores_promedio": 25670,
         "estado_lanzamiento": "Completo Directo",
-        "soporte_multiplataforma": ["Windows"],
+        "soporte_multiplataforma": [
+            "Windows"
+        ],
         "genero_principal": "Action"
     },
     {
@@ -89,10 +107,14 @@
         "precio_base_usd": 9.99,
         "porcentaje_resenas_positivas": 97.5,
         "categoria_resenas": "Overwhelmingly Positive",
-        "pico_historico_concurrentes": 24580,
-        "jugadores_promedio": 0,
+        "pico_historico_concurrentes": 489886,
+        "jugadores_promedio": 24814,
         "estado_lanzamiento": "Completo Directo",
-        "soporte_multiplataforma": ["Windows", "Mac", "Linux"],
+        "soporte_multiplataforma": [
+            "Windows",
+            "Mac",
+            "Linux"
+        ],
         "genero_principal": "Action"
     },
     {
@@ -101,10 +123,14 @@
         "precio_base_usd": 14.99,
         "porcentaje_resenas_positivas": 98.4,
         "categoria_resenas": "Overwhelmingly Positive",
-        "pico_historico_concurrentes": 50662,
-        "jugadores_promedio": 0,
+        "pico_historico_concurrentes": 236614,
+        "jugadores_promedio": 48693,
         "estado_lanzamiento": "Completo Directo",
-        "soporte_multiplataforma": ["Windows", "Mac", "Linux"],
+        "soporte_multiplataforma": [
+            "Windows",
+            "Mac",
+            "Linux"
+        ],
         "genero_principal": "Indie"
     },
     {
@@ -113,10 +139,13 @@
         "precio_base_usd": 9.99,
         "porcentaje_resenas_positivas": 98.7,
         "categoria_resenas": "Overwhelmingly Positive",
-        "pico_historico_concurrentes": 1959,
-        "jugadores_promedio": 0,
+        "pico_historico_concurrentes": 98460,
+        "jugadores_promedio": 2130,
         "estado_lanzamiento": "Completo Directo",
-        "soporte_multiplataforma": ["Windows", "Linux"],
+        "soporte_multiplataforma": [
+            "Windows",
+            "Linux"
+        ],
         "genero_principal": "Action"
     },
     {
@@ -125,10 +154,12 @@
         "precio_base_usd": 39.99,
         "porcentaje_resenas_positivas": 76.2,
         "categoria_resenas": "Mostly Positive",
-        "pico_historico_concurrentes": 53399,
-        "jugadores_promedio": 0,
+        "pico_historico_concurrentes": 458709,
+        "jugadores_promedio": 47719,
         "estado_lanzamiento": "Completo Directo",
-        "soporte_multiplataforma": ["Windows"],
+        "soporte_multiplataforma": [
+            "Windows"
+        ],
         "genero_principal": "Action"
     },
     {
@@ -137,10 +168,12 @@
         "precio_base_usd": 29.99,
         "porcentaje_resenas_positivas": 88.0,
         "categoria_resenas": "Very Positive",
-        "pico_historico_concurrentes": 13923,
-        "jugadores_promedio": 0,
+        "pico_historico_concurrentes": 334684,
+        "jugadores_promedio": 9408,
         "estado_lanzamiento": "Completo Directo",
-        "soporte_multiplataforma": ["Windows"],
+        "soporte_multiplataforma": [
+            "Windows"
+        ],
         "genero_principal": "Action"
     },
     {
@@ -149,10 +182,12 @@
         "precio_base_usd": 59.99,
         "porcentaje_resenas_positivas": 95.3,
         "categoria_resenas": "Overwhelmingly Positive",
-        "pico_historico_concurrentes": 6767,
-        "jugadores_promedio": 0,
+        "pico_historico_concurrentes": 125315,
+        "jugadores_promedio": 2829,
         "estado_lanzamiento": "Completo Directo",
-        "soporte_multiplataforma": ["Windows"],
+        "soporte_multiplataforma": [
+            "Windows"
+        ],
         "genero_principal": "Action"
     },
     {
@@ -161,10 +196,12 @@
         "precio_base_usd": 39.99,
         "porcentaje_resenas_positivas": 92.0,
         "categoria_resenas": "Very Positive",
-        "pico_historico_concurrentes": 25085,
-        "jugadores_promedio": 0,
+        "pico_historico_concurrentes": 69906,
+        "jugadores_promedio": 24025,
         "estado_lanzamiento": "Completo Directo",
-        "soporte_multiplataforma": ["Windows"],
+        "soporte_multiplataforma": [
+            "Windows"
+        ],
         "genero_principal": "RPG"
     },
     {
@@ -173,10 +210,12 @@
         "precio_base_usd": 19.99,
         "porcentaje_resenas_positivas": 83.1,
         "categoria_resenas": "Very Positive",
-        "pico_historico_concurrentes": 11179,
-        "jugadores_promedio": 0,
+        "pico_historico_concurrentes": 472962,
+        "jugadores_promedio": 13195,
         "estado_lanzamiento": "Completo Directo",
-        "soporte_multiplataforma": ["Windows"],
+        "soporte_multiplataforma": [
+            "Windows"
+        ],
         "genero_principal": "RPG"
     },
     {
@@ -185,10 +224,12 @@
         "precio_base_usd": 39.99,
         "porcentaje_resenas_positivas": 91.2,
         "categoria_resenas": "Very Positive",
-        "pico_historico_concurrentes": 2262,
-        "jugadores_promedio": 0,
+        "pico_historico_concurrentes": 104891,
+        "jugadores_promedio": 1086,
         "estado_lanzamiento": "Completo Directo",
-        "soporte_multiplataforma": ["Windows"],
+        "soporte_multiplataforma": [
+            "Windows"
+        ],
         "genero_principal": "Action"
     },
     {
@@ -197,10 +238,12 @@
         "precio_base_usd": 59.99,
         "porcentaje_resenas_positivas": 96.8,
         "categoria_resenas": "Overwhelmingly Positive",
-        "pico_historico_concurrentes": 54771,
-        "jugadores_promedio": 0,
+        "pico_historico_concurrentes": 875343,
+        "jugadores_promedio": 43878,
         "estado_lanzamiento": "Completo Directo",
-        "soporte_multiplataforma": ["Windows"],
+        "soporte_multiplataforma": [
+            "Windows"
+        ],
         "genero_principal": "RPG"
     },
     {
@@ -209,10 +252,14 @@
         "precio_base_usd": 39.99,
         "porcentaje_resenas_positivas": 87.2,
         "categoria_resenas": "Very Positive",
-        "pico_historico_concurrentes": 143870,
-        "jugadores_promedio": 0,
+        "pico_historico_concurrentes": 262284,
+        "jugadores_promedio": 141091,
         "estado_lanzamiento": "Completo Directo",
-        "soporte_multiplataforma": ["Windows", "Mac", "Linux"],
+        "soporte_multiplataforma": [
+            "Windows",
+            "Mac",
+            "Linux"
+        ],
         "genero_principal": "Action"
     },
     {
@@ -221,10 +268,14 @@
         "precio_base_usd": 29.99,
         "porcentaje_resenas_positivas": 97.0,
         "categoria_resenas": "Overwhelmingly Positive",
-        "pico_historico_concurrentes": 2719,
-        "jugadores_promedio": 0,
+        "pico_historico_concurrentes": 51156,
+        "jugadores_promedio": 6349,
         "estado_lanzamiento": "Completo Directo",
-        "soporte_multiplataforma": ["Windows", "Mac", "Linux"],
+        "soporte_multiplataforma": [
+            "Windows",
+            "Mac",
+            "Linux"
+        ],
         "genero_principal": "Adventure"
     },
     {
@@ -233,10 +284,14 @@
         "precio_base_usd": 35,
         "porcentaje_resenas_positivas": 97.0,
         "categoria_resenas": "Overwhelmingly Positive",
-        "pico_historico_concurrentes": 16426,
-        "jugadores_promedio": 0,
+        "pico_historico_concurrentes": 118674,
+        "jugadores_promedio": 19019,
         "estado_lanzamiento": "Completo Directo",
-        "soporte_multiplataforma": ["Windows", "Mac", "Linux"],
+        "soporte_multiplataforma": [
+            "Windows",
+            "Mac",
+            "Linux"
+        ],
         "genero_principal": "Casual"
     },
     {
@@ -245,10 +300,14 @@
         "precio_base_usd": 24.99,
         "porcentaje_resenas_positivas": 98.2,
         "categoria_resenas": "Overwhelmingly Positive",
-        "pico_historico_concurrentes": 2253,
-        "jugadores_promedio": 0,
+        "pico_historico_concurrentes": 54240,
+        "jugadores_promedio": 5373,
         "estado_lanzamiento": "Completo Directo",
-        "soporte_multiplataforma": ["Windows", "Mac", "Linux"],
+        "soporte_multiplataforma": [
+            "Windows",
+            "Mac",
+            "Linux"
+        ],
         "genero_principal": "Action"
     },
     {
@@ -257,10 +316,12 @@
         "precio_base_usd": 39.99,
         "porcentaje_resenas_positivas": 80.7,
         "categoria_resenas": "Very Positive",
-        "pico_historico_concurrentes": 64,
-        "jugadores_promedio": 0,
+        "pico_historico_concurrentes": 2264,
+        "jugadores_promedio": 87,
         "estado_lanzamiento": "Completo Directo",
-        "soporte_multiplataforma": ["Windows"],
+        "soporte_multiplataforma": [
+            "Windows"
+        ],
         "genero_principal": "Action"
     },
     {
@@ -269,10 +330,12 @@
         "precio_base_usd": 39.99,
         "porcentaje_resenas_positivas": 92.5,
         "categoria_resenas": "Very Positive",
-        "pico_historico_concurrentes": 1479,
-        "jugadores_promedio": 0,
+        "pico_historico_concurrentes": 12376,
+        "jugadores_promedio": 4188,
         "estado_lanzamiento": "Completo Directo",
-        "soporte_multiplataforma": ["Windows"],
+        "soporte_multiplataforma": [
+            "Windows"
+        ],
         "genero_principal": "Racing"
     },
     {
@@ -281,10 +344,14 @@
         "precio_base_usd": 14.99,
         "porcentaje_resenas_positivas": 97.3,
         "categoria_resenas": "Overwhelmingly Positive",
-        "pico_historico_concurrentes": 14904,
-        "jugadores_promedio": 0,
+        "pico_historico_concurrentes": 70701,
+        "jugadores_promedio": 20359,
         "estado_lanzamiento": "Completo Directo",
-        "soporte_multiplataforma": ["Windows", "Mac", "Linux"],
+        "soporte_multiplataforma": [
+            "Windows",
+            "Mac",
+            "Linux"
+        ],
         "genero_principal": "Action"
     },
     {
@@ -293,10 +360,14 @@
         "precio_base_usd": 59.99,
         "porcentaje_resenas_positivas": 86.9,
         "categoria_resenas": "Very Positive",
-        "pico_historico_concurrentes": 25420,
-        "jugadores_promedio": 0,
+        "pico_historico_concurrentes": 162657,
+        "jugadores_promedio": 30049,
         "estado_lanzamiento": "Completo Directo",
-        "soporte_multiplataforma": ["Windows", "Mac", "Linux"],
+        "soporte_multiplataforma": [
+            "Windows",
+            "Mac",
+            "Linux"
+        ],
         "genero_principal": "Strategy"
     },
     {
@@ -305,10 +376,12 @@
         "precio_base_usd": 29.99,
         "porcentaje_resenas_positivas": 94.1,
         "categoria_resenas": "Very Positive",
-        "pico_historico_concurrentes": 18028,
-        "jugadores_promedio": 0,
+        "pico_historico_concurrentes": 2101867,
+        "jugadores_promedio": 16199,
         "estado_lanzamiento": "Early Access",
-        "soporte_multiplataforma": ["Windows"],
+        "soporte_multiplataforma": [
+            "Windows"
+        ],
         "genero_principal": "Action"
     },
     {
@@ -317,10 +390,12 @@
         "precio_base_usd": 39.99,
         "porcentaje_resenas_positivas": 86.3,
         "categoria_resenas": "Very Positive",
-        "pico_historico_concurrentes": 1977,
-        "jugadores_promedio": 0,
+        "pico_historico_concurrentes": 173178,
+        "jugadores_promedio": 4375,
         "estado_lanzamiento": "Early Access",
-        "soporte_multiplataforma": ["Windows"],
+        "soporte_multiplataforma": [
+            "Windows"
+        ],
         "genero_principal": "Simulation"
     },
     {
@@ -329,10 +404,14 @@
         "precio_base_usd": 19.99,
         "porcentaje_resenas_positivas": 94.3,
         "categoria_resenas": "Very Positive",
-        "pico_historico_concurrentes": 14439,
-        "jugadores_promedio": 0,
+        "pico_historico_concurrentes": 502387,
+        "jugadores_promedio": 26073,
         "estado_lanzamiento": "Early Access",
-        "soporte_multiplataforma": ["Windows", "Mac", "Linux"],
+        "soporte_multiplataforma": [
+            "Windows",
+            "Mac",
+            "Linux"
+        ],
         "genero_principal": "Action"
     },
     {
@@ -341,10 +420,12 @@
         "precio_base_usd": 19.99,
         "porcentaje_resenas_positivas": 95.8,
         "categoria_resenas": "Overwhelmingly Positive",
-        "pico_historico_concurrentes": 9978,
-        "jugadores_promedio": 0,
+        "pico_historico_concurrentes": 112717,
+        "jugadores_promedio": 14682,
         "estado_lanzamiento": "Early Access",
-        "soporte_multiplataforma": ["Windows"],
+        "soporte_multiplataforma": [
+            "Windows"
+        ],
         "genero_principal": "Action"
     },
     {
@@ -353,10 +434,14 @@
         "precio_base_usd": 19.99,
         "porcentaje_resenas_positivas": 94.2,
         "categoria_resenas": "Very Positive",
-        "pico_historico_concurrentes": 22864,
-        "jugadores_promedio": 0,
+        "pico_historico_concurrentes": 65505,
+        "jugadores_promedio": 29911,
         "estado_lanzamiento": "Early Access",
-        "soporte_multiplataforma": ["Windows", "Mac", "Linux"],
+        "soporte_multiplataforma": [
+            "Windows",
+            "Mac",
+            "Linux"
+        ],
         "genero_principal": "Indie"
     },
     {
@@ -365,10 +450,12 @@
         "precio_base_usd": 29.99,
         "porcentaje_resenas_positivas": 86.4,
         "categoria_resenas": "Very Positive",
-        "pico_historico_concurrentes": 10654,
-        "jugadores_promedio": 0,
+        "pico_historico_concurrentes": 160405,
+        "jugadores_promedio": 19424,
         "estado_lanzamiento": "Early Access",
-        "soporte_multiplataforma": ["Windows"],
+        "soporte_multiplataforma": [
+            "Windows"
+        ],
         "genero_principal": "Action"
     },
     {
@@ -377,10 +464,12 @@
         "precio_base_usd": 24.99,
         "porcentaje_resenas_positivas": 97.4,
         "categoria_resenas": "Overwhelmingly Positive",
-        "pico_historico_concurrentes": 15863,
-        "jugadores_promedio": 0,
+        "pico_historico_concurrentes": 38775,
+        "jugadores_promedio": 27477,
         "estado_lanzamiento": "Early Access",
-        "soporte_multiplataforma": ["Windows"],
+        "soporte_multiplataforma": [
+            "Windows"
+        ],
         "genero_principal": "Racing"
     },
     {
@@ -389,10 +478,12 @@
         "precio_base_usd": 29.99,
         "porcentaje_resenas_positivas": 80.6,
         "categoria_resenas": "Very Positive",
-        "pico_historico_concurrentes": 1252,
-        "jugadores_promedio": 0,
+        "pico_historico_concurrentes": 15263,
+        "jugadores_promedio": 3407,
         "estado_lanzamiento": "Early Access",
-        "soporte_multiplataforma": ["Windows"],
+        "soporte_multiplataforma": [
+            "Windows"
+        ],
         "genero_principal": "Action"
     },
     {
@@ -401,10 +492,12 @@
         "precio_base_usd": 19.99,
         "porcentaje_resenas_positivas": 97.7,
         "categoria_resenas": "Overwhelmingly Positive",
-        "pico_historico_concurrentes": 2703,
-        "jugadores_promedio": 0,
+        "pico_historico_concurrentes": 59815,
+        "jugadores_promedio": 3036,
         "estado_lanzamiento": "Early Access",
-        "soporte_multiplataforma": ["Windows"],
+        "soporte_multiplataforma": [
+            "Windows"
+        ],
         "genero_principal": "Indie"
     },
     {
@@ -413,10 +506,12 @@
         "precio_base_usd": 49.99,
         "porcentaje_resenas_positivas": 29.6,
         "categoria_resenas": "Mostly Negative",
-        "pico_historico_concurrentes": 62,
-        "jugadores_promedio": 0,
+        "pico_historico_concurrentes": 25724,
+        "jugadores_promedio": 211,
         "estado_lanzamiento": "Early Access",
-        "soporte_multiplataforma": ["Windows"],
+        "soporte_multiplataforma": [
+            "Windows"
+        ],
         "genero_principal": "Indie"
     },
     {
@@ -425,10 +520,12 @@
         "precio_base_usd": 24.99,
         "porcentaje_resenas_positivas": 79.0,
         "categoria_resenas": "Very Positive",
-        "pico_historico_concurrentes": 806,
-        "jugadores_promedio": 0,
+        "pico_historico_concurrentes": 19380,
+        "jugadores_promedio": 872,
         "estado_lanzamiento": "Early Access",
-        "soporte_multiplataforma": ["Windows"],
+        "soporte_multiplataforma": [
+            "Windows"
+        ],
         "genero_principal": "Action"
     },
     {
@@ -437,34 +534,40 @@
         "precio_base_usd": 44.99,
         "porcentaje_resenas_positivas": 59.1,
         "categoria_resenas": "Mixed",
-        "pico_historico_concurrentes": 17007,
-        "jugadores_promedio": 0,
+        "pico_historico_concurrentes": 98047,
+        "jugadores_promedio": 23690,
         "estado_lanzamiento": "Early Access",
-        "soporte_multiplataforma": ["Windows"],
+        "soporte_multiplataforma": [
+            "Windows"
+        ],
         "genero_principal": "Action"
     },
     {
         "app_id": 312540,
         "nombre": "Far Far West",
         "precio_base_usd": 19.99,
-        "porcentaje_resenas_positivas": 0,
+        "porcentaje_resenas_positivas": 97.8,
         "categoria_resenas": "Overwhelmingly Positive",
-        "pico_historico_concurrentes": 0,
-        "jugadores_promedio": 0,
+        "pico_historico_concurrentes": 29248,
+        "jugadores_promedio": 29248,
         "estado_lanzamiento": "Early Access",
-        "soporte_multiplataforma": ["Windows"],
+        "soporte_multiplataforma": [
+            "Windows"
+        ],
         "genero_principal": "Action"
     },
     {
         "app_id": 3041230,
         "nombre": "Windrose",
         "precio_base_usd": 29.99,
-        "porcentaje_resenas_positivas": 0,
+        "porcentaje_resenas_positivas": 87.5,
         "categoria_resenas": "Very Positive",
-        "pico_historico_concurrentes": 0,
-        "jugadores_promedio": 0,
+        "pico_historico_concurrentes": 222134,
+        "jugadores_promedio": 115537,
         "estado_lanzamiento": "Early Access",
-        "soporte_multiplataforma": ["Windows"],
+        "soporte_multiplataforma": [
+            "Windows"
+        ],
         "genero_principal": "Action"
     },
     {
@@ -473,10 +576,12 @@
         "precio_base_usd": 29.99,
         "porcentaje_resenas_positivas": 70.1,
         "categoria_resenas": "Mostly Positive",
-        "pico_historico_concurrentes": 16727,
-        "jugadores_promedio": 0,
+        "pico_historico_concurrentes": 578569,
+        "jugadores_promedio": 8038,
         "estado_lanzamiento": "Early Access",
-        "soporte_multiplataforma": ["Windows"],
+        "soporte_multiplataforma": [
+            "Windows"
+        ],
         "genero_principal": "Action"
     },
     {
@@ -485,10 +590,12 @@
         "precio_base_usd": 0,
         "porcentaje_resenas_positivas": 75.6,
         "categoria_resenas": "Very Positive",
-        "pico_historico_concurrentes": 34699,
-        "jugadores_promedio": 0,
+        "pico_historico_concurrentes": 79593,
+        "jugadores_promedio": 44011,
         "estado_lanzamiento": "Early Access",
-        "soporte_multiplataforma": ["Windows"],
+        "soporte_multiplataforma": [
+            "Windows"
+        ],
         "genero_principal": "Adventure"
     },
     {
@@ -497,10 +604,12 @@
         "precio_base_usd": 9.99,
         "porcentaje_resenas_positivas": 97.2,
         "categoria_resenas": "Overwhelmingly Positive",
-        "pico_historico_concurrentes": 6199,
-        "jugadores_promedio": 0,
+        "pico_historico_concurrentes": 240817,
+        "jugadores_promedio": 6593,
         "estado_lanzamiento": "Early Access",
-        "soporte_multiplataforma": ["Windows"],
+        "soporte_multiplataforma": [
+            "Windows"
+        ],
         "genero_principal": "Action"
     },
     {
@@ -509,10 +618,12 @@
         "precio_base_usd": 19.99,
         "porcentaje_resenas_positivas": 98.4,
         "categoria_resenas": "Overwhelmingly Positive",
-        "pico_historico_concurrentes": 27357,
-        "jugadores_promedio": 0,
+        "pico_historico_concurrentes": 459075,
+        "jugadores_promedio": 20601,
         "estado_lanzamiento": "Early Access",
-        "soporte_multiplataforma": ["Windows"],
+        "soporte_multiplataforma": [
+            "Windows"
+        ],
         "genero_principal": "Action"
     },
     {
@@ -521,10 +632,12 @@
         "precio_base_usd": 9.99,
         "porcentaje_resenas_positivas": 96.5,
         "categoria_resenas": "Overwhelmingly Positive",
-        "pico_historico_concurrentes": 32349,
-        "jugadores_promedio": 0,
+        "pico_historico_concurrentes": 271571,
+        "jugadores_promedio": 32671,
         "estado_lanzamiento": "Early Access",
-        "soporte_multiplataforma": ["Windows"],
+        "soporte_multiplataforma": [
+            "Windows"
+        ],
         "genero_principal": "Action"
     }
 ]

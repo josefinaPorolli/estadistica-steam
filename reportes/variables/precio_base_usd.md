@@ -56,7 +56,3 @@ El conjunto actual contiene 44 juegos: 19 en Early Access y 25 en Completo Direc
 
 ![Boxplot comparativo de precio base](../../images/frecuencias_precio_boxplot_comparativo.png)
 
-### Visualización - Dispersograma
-
-![Dispersograma de precio base](../../images/frecuencias_precio_dispersograma.png)
-

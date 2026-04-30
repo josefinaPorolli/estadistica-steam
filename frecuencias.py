@@ -3,8 +3,10 @@
 
 from math import ceil, floor, log10
 from pathlib import Path
+from typing import Sequence
 
 import matplotlib.pyplot as plt
+from matplotlib.ticker import MaxNLocator
 import pandas as pd
 
 
@@ -22,7 +24,12 @@ REPORTES_VARIABLES_DIR.mkdir(exist_ok=True)
 plt.style.use("seaborn-v0_8-darkgrid")
 
 
-def construir_bins_paso(valores: pd.Series, paso: float, minimo: float | None = None, maximo: float | None = None):
+def construir_bins_paso(
+    valores: pd.Series,
+    paso: float,
+    minimo: float | None = None,
+    maximo: float | None = None,
+):
     """Construye bordes de intervalos de ancho fijo y cubre todo el rango de datos."""
     valor_min = float(valores.min()) if minimo is None else float(minimo)
     valor_max = float(valores.max()) if maximo is None else float(maximo)
@@ -72,7 +79,7 @@ def construir_bins_optimos_sturges(valores: pd.Series):
     return bins
 
 
-def generar_tabla_frecuencias_intervalos(valores: pd.Series, bins: list[float]):
+def generar_tabla_frecuencias_intervalos(valores: pd.Series, bins: Sequence[float]):
     """Calcula frecuencias absolutas y relativas (simples y acumuladas) por intervalo."""
     categorias, bin_edges = pd.cut(valores, bins=bins, retbins=True, right=False)
     freq_data = categorias.value_counts().sort_index()
@@ -181,7 +188,7 @@ def agregar_nota_conjunto(md_content: list[str], total: int, early_access: int, 
 def generar_histograma_doble(
     valores_ea: pd.Series,
     valores_cd: pd.Series,
-    bins: list[float],
+    bins: Sequence[float],
     x_label: str,
     titulo_ea: str,
     titulo_cd: str,
@@ -194,13 +201,13 @@ def generar_histograma_doble(
     axes[0].set_xlabel(x_label)
     axes[0].set_ylabel("Frecuencia Absoluta")
     axes[0].set_title(titulo_ea)
-    axes[0].yaxis.set_major_locator(plt.MaxNLocator(integer=True))
+    axes[0].yaxis.set_major_locator(MaxNLocator(integer=True))
 
     axes[1].hist(valores_cd, bins=bins, color="coral", edgecolor="black", alpha=0.75)
     axes[1].set_xlabel(x_label)
     axes[1].set_ylabel("Frecuencia Absoluta")
     axes[1].set_title(titulo_cd)
-    axes[1].yaxis.set_major_locator(plt.MaxNLocator(integer=True))
+    axes[1].yaxis.set_major_locator(MaxNLocator(integer=True))
 
     plt.tight_layout()
     output_path = IMAGES_DIR / nombre_archivo
@@ -234,7 +241,7 @@ def generar_barras_dobles_desde_tablas(
     ax.set_ylabel("Frecuencia Absoluta")
     ax.set_title(titulo)
     ax.legend()
-    ax.yaxis.set_major_locator(plt.MaxNLocator(integer=True))
+    ax.yaxis.set_major_locator(MaxNLocator(integer=True))
 
     plt.tight_layout()
     output_path = IMAGES_DIR / nombre_archivo
@@ -316,7 +323,7 @@ def generar_barras_separadas_desde_tablas(
         ax.set_xlabel(x_label)
         ax.set_ylabel("Frecuencia Absoluta")
         ax.set_title(f"{titulo} - Gráfico de Barras")
-        ax.yaxis.set_major_locator(plt.MaxNLocator(integer=True))
+        ax.yaxis.set_major_locator(MaxNLocator(integer=True))
         ax.grid(True, alpha=0.3, axis="y")
 
     plt.tight_layout()
@@ -350,7 +357,7 @@ def generar_ojivas_separadas_desde_tablas(
         ax.set_xlabel(x_label)
         ax.set_ylabel("Frecuencia Acumulada")
         ax.set_title(f"{titulo} - Gráfico de Ojiva")
-        ax.yaxis.set_major_locator(plt.MaxNLocator(integer=True))
+        ax.yaxis.set_major_locator(MaxNLocator(integer=True))
         ax.grid(True, alpha=0.3)
 
     plt.tight_layout()
@@ -388,7 +395,7 @@ def generar_ojivas_comparativas(
     ax.set_ylabel("Frecuencia Acumulada")
     ax.set_title("Gráfico de Ojivas Comparativas")
     ax.legend()
-    ax.yaxis.set_major_locator(plt.MaxNLocator(integer=True))
+    ax.yaxis.set_major_locator(MaxNLocator(integer=True))
     ax.grid(True, alpha=0.3)
 
     plt.tight_layout()
@@ -422,7 +429,7 @@ def generar_poligono_frecuencias_separado(
         ax.set_xlabel(x_label)
         ax.set_ylabel("Frecuencia Absoluta")
         ax.set_title(f"{titulo} - Polígono de Frecuencias")
-        ax.yaxis.set_major_locator(plt.MaxNLocator(integer=True))
+        ax.yaxis.set_major_locator(MaxNLocator(integer=True))
         ax.grid(True, alpha=0.3)
 
     plt.tight_layout()
@@ -456,7 +463,7 @@ def generar_poligono_frecuencias_comparativo(
     ax.set_ylabel("Frecuencia Absoluta")
     ax.set_title("Polígono de Frecuencias Comparativo")
     ax.legend()
-    ax.yaxis.set_major_locator(plt.MaxNLocator(integer=True))
+    ax.yaxis.set_major_locator(MaxNLocator(integer=True))
     ax.grid(True, alpha=0.3)
 
     plt.tight_layout()
@@ -716,35 +723,98 @@ def generar_boxplot_horizontal_comparativo(
     return output_path
 
 
-def generar_dispersograma_continuo(
-    valores_ea: pd.Series,
-    valores_cd: pd.Series,
-    y_label: str,
+def generar_dispersograma_bivariado(
+    var1_ea: pd.Series,
+    var1_cd: pd.Series,
+    var1_label: str,
+    var2_ea: pd.Series,
+    var2_cd: pd.Series,
+    var2_label: str,
+    titulo: str,
     nombre_archivo: str,
 ):
-    """Genera dispersogramas separados para Early Access y Completo Directo."""
-    fig, axes = plt.subplots(1, 2, figsize=(14, 5), sharey=True)
+    """Genera dispersograma bivariado para dos variables cuantitativas (EA vs CD)."""
+    fig, ax = plt.subplots(figsize=(10, 7))
 
-    for ax, valores, titulo, color in [
-        (axes[0], valores_ea, "Early Access", "skyblue"),
-        (axes[1], valores_cd, "Completo Directo", "coral"),
-    ]:
-        serie = valores.reset_index(drop=True)
-        x_pos = list(range(1, len(serie) + 1))
+    # Scatter plot para Early Access
+    ax.scatter(
+        var1_ea,
+        var2_ea,
+        s=100,
+        color="skyblue",
+        edgecolor="black",
+        alpha=0.7,
+        label="Early Access"
+    )
+    
+    # Scatter plot para Completo Directo
+    ax.scatter(
+        var1_cd,
+        var2_cd,
+        s=100,
+        color="coral",
+        edgecolor="black",
+        alpha=0.7,
+        label="Completo Directo"
+    )
 
-        if len(serie) > 0:
-            ax.scatter(x_pos, serie, s=65, color=color, edgecolor="black", alpha=0.8)
-
-        ax.set_xlabel("Índice del juego")
-        ax.set_ylabel(y_label)
-        ax.set_title(f"{titulo} - Dispersograma")
-        ax.grid(True, alpha=0.3)
+    ax.set_xlabel(var1_label, fontsize=11, fontweight="bold")
+    ax.set_ylabel(var2_label, fontsize=11, fontweight="bold")
+    ax.set_title(titulo, fontsize=12, fontweight="bold")
+    ax.legend()
+    ax.grid(True, alpha=0.3)
 
     plt.tight_layout()
     output_path = IMAGES_DIR / nombre_archivo
     plt.savefig(output_path, dpi=150, bbox_inches="tight")
     plt.close()
     return output_path
+
+
+def generar_todos_dispersogramas_bivariados(data: pd.DataFrame):
+    """Genera todos los dispersogramas bivariados con pares de variables cuantitativas."""
+    early_access = data[data["estado_lanzamiento"] == "Early Access"]
+    completo_directo = data[data["estado_lanzamiento"] == "Completo Directo"]
+    
+    # Variables cuantitativas disponibles
+    variables = [
+        ("precio_base_usd", "Precio Base (USD)"),
+        ("porcentaje_resenas_positivas", "Porcentaje de Reseñas Positivas (%)"),
+        ("pico_historico_concurrentes", "Pico Histórico de Concurrentes"),
+        ("jugadores_promedio", "Jugadores Promedio"),
+    ]
+    
+    dispersogramas_info = []
+    
+    # Generar todos los pares
+    for i in range(len(variables)):
+        for j in range(i + 1, len(variables)):
+            var1_col, var1_label = variables[i]
+            var2_col, var2_label = variables[j]
+            
+            # Resetear índices para alineación
+            var1_ea = early_access[var1_col].reset_index(drop=True)
+            var1_cd = completo_directo[var1_col].reset_index(drop=True)
+            var2_ea = early_access[var2_col].reset_index(drop=True)
+            var2_cd = completo_directo[var2_col].reset_index(drop=True)
+            
+            titulo = f"{var1_label} vs {var2_label}"
+            nombre_archivo = f"dispersograma_{var1_col}_vs_{var2_col}.png"
+            
+            generar_dispersograma_bivariado(
+                var1_ea, var1_cd, var1_label,
+                var2_ea, var2_cd, var2_label,
+                titulo, nombre_archivo
+            )
+            
+            dispersogramas_info.append({
+                "titulo": titulo,
+                "archivo": nombre_archivo,
+                "var1": var1_label,
+                "var2": var2_label,
+            })
+    
+    return dispersogramas_info
 
 
 def generar_dispersograma_categorico(
@@ -886,15 +956,6 @@ def main():
         "![Boxplot comparativo de precio base](../../images/frecuencias_precio_boxplot_comparativo.png)\n\n"
     )
 
-    generar_dispersograma_continuo(
-        valores_ea=precio_ea,
-        valores_cd=precio_cd,
-        y_label="Precio base (USD$)",
-        nombre_archivo="frecuencias_precio_dispersograma.png",
-    )
-    contenido_precio.append("### Visualización - Dispersograma\n\n")
-    contenido_precio.append("![Dispersograma de precio base](../../images/frecuencias_precio_dispersograma.png)\n\n")
-
     reportes_generados.append(
         guardar_reporte_variable("precio_base_usd", "Precio Base (USD)", contenido_precio)
     )
@@ -995,17 +1056,6 @@ def main():
     contenido_resenas.append("### Visualización - Boxplot Comparativo\n\n")
     contenido_resenas.append(
         "![Boxplot comparativo de porcentaje de reseñas positivas](../../images/frecuencias_resenas_boxplot_comparativo.png)\n\n"
-    )
-
-    generar_dispersograma_continuo(
-        valores_ea=resenas_ea,
-        valores_cd=resenas_cd,
-        y_label="Porcentaje de reseñas positivas (%)",
-        nombre_archivo="frecuencias_resenas_dispersograma.png",
-    )
-    contenido_resenas.append("### Visualización - Dispersograma\n\n")
-    contenido_resenas.append(
-        "![Dispersograma de porcentaje de reseñas positivas](../../images/frecuencias_resenas_dispersograma.png)\n\n"
     )
 
     reportes_generados.append(
@@ -1205,17 +1255,6 @@ def main():
         "![Boxplot comparativo de pico histórico de concurrentes](../../images/frecuencias_pico_historico_boxplot_comparativo.png)\n\n"
     )
 
-    generar_dispersograma_continuo(
-        valores_ea=early_access["pico_historico_concurrentes"],
-        valores_cd=completo_directo["pico_historico_concurrentes"],
-        y_label="Pico histórico de concurrentes",
-        nombre_archivo="frecuencias_pico_historico_dispersograma.png",
-    )
-    contenido_pico.append("### Visualización - Dispersograma\n\n")
-    contenido_pico.append(
-        "![Dispersograma de pico histórico de concurrentes](../../images/frecuencias_pico_historico_dispersograma.png)\n\n"
-    )
-
     reportes_generados.append(
         guardar_reporte_variable(
             "pico_historico_concurrentes",
@@ -1324,17 +1363,6 @@ def main():
     contenido_jugadores.append("### Visualización - Boxplot Comparativo\n\n")
     contenido_jugadores.append("![Boxplot comparativo de jugadores promedio](../../images/frecuencias_jugadores_promedio_boxplot_comparativo.png)\n\n")
 
-    generar_dispersograma_continuo(
-        valores_ea=early_access["jugadores_promedio"],
-        valores_cd=completo_directo["jugadores_promedio"],
-        y_label="Jugadores promedio",
-        nombre_archivo="frecuencias_jugadores_promedio_dispersograma.png",
-    )
-    contenido_jugadores.append("### Visualización - Dispersograma\n\n")
-    contenido_jugadores.append(
-        "![Dispersograma de jugadores promedio](../../images/frecuencias_jugadores_promedio_dispersograma.png)\n\n"
-    )
-
     reportes_generados.append(
         guardar_reporte_variable("jugadores_promedio", "Jugadores Promedio", contenido_jugadores)
     )
@@ -1419,23 +1447,20 @@ def main():
         guardar_reporte_variable("genero_principal", "Género Principal", contenido_genero)
     )
 
+    # ---------- Dispersogramas bivariados ----------
+    dispersogramas_info = generar_todos_dispersogramas_bivariados(data)
+    
     contenido_dispersogramas = [
-        f"El informe reúne los dispersogramas del conjunto actual de {len(data)} juegos.\n\n",
-        "### Precio Base (USD)\n\n",
-        "![Dispersograma de precio base](../images/frecuencias_precio_dispersograma.png)\n\n",
-        "### Porcentaje de Reseñas Positivas\n\n",
-        "![Dispersograma de porcentaje de reseñas positivas](../images/frecuencias_resenas_dispersograma.png)\n\n",
-        "### Categorías de Reseñas\n\n",
-        "![Dispersograma de categorías de reseñas](../images/frecuencias_categoria_resenas_dispersograma.png)\n\n",
-        "### Pico Histórico de Concurrentes\n\n",
-        "![Dispersograma de pico histórico de concurrentes](../images/frecuencias_pico_historico_dispersograma.png)\n\n",
-        "### Jugadores Promedio\n\n",
-        "![Dispersograma de jugadores promedio](../images/frecuencias_jugadores_promedio_dispersograma.png)\n\n",
-        "### Soporte Multiplataforma\n\n",
-        "![Dispersograma de soporte multiplataforma](../images/frecuencias_soporte_multiplataforma_dispersograma.png)\n\n",
-        "### Género Principal\n\n",
-        "![Dispersograma de género principal](../images/frecuencias_genero_principal_dispersograma.png)\n\n",
+        f"# Dispersogramas Bivariados\n\n",
+        f"El informe reúne los dispersogramas bivariados del conjunto actual de {len(data)} juegos.\n",
+        f"Se muestran las relaciones entre pares de variables cuantitativas,\n",
+        f"separando juegos en Early Access (azul) de Completo Directo (coral).\n\n",
     ]
+    
+    for info in dispersogramas_info:
+        contenido_dispersogramas.append(f"## {info['titulo']}\n\n")
+        contenido_dispersogramas.append(f"![{info['titulo']}](../images/{info['archivo']})\n\n")
+        contenido_dispersogramas.append(f"**Variables:** {info['var1']} vs {info['var2']}\n\n")
 
     reportes_generados.append(guardar_reporte_dispersogramas(contenido_dispersogramas))
 

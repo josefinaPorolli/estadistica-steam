@@ -2,33 +2,45 @@
 
 ## Visualizaciones
 
-El informe reúne los dispersogramas del conjunto actual de 44 juegos.
+# Dispersogramas Bivariados
 
-### Precio Base (USD)
+El informe reúne los dispersogramas bivariados del conjunto actual de 44 juegos.
+Se muestran las relaciones entre pares de variables cuantitativas,
+separando juegos en Early Access (azul) de Completo Directo (coral).
 
-![Dispersograma de precio base](../images/frecuencias_precio_dispersograma.png)
+## Precio Base (USD) vs Porcentaje de Reseñas Positivas (%)
 
-### Porcentaje de Reseñas Positivas
+![Precio Base (USD) vs Porcentaje de Reseñas Positivas (%)](../images/dispersograma_precio_base_usd_vs_porcentaje_resenas_positivas.png)
 
-![Dispersograma de porcentaje de reseñas positivas](../images/frecuencias_resenas_dispersograma.png)
+**Variables:** Precio Base (USD) vs Porcentaje de Reseñas Positivas (%)
 
-### Categorías de Reseñas
+## Precio Base (USD) vs Pico Histórico de Concurrentes
 
-![Dispersograma de categorías de reseñas](../images/frecuencias_categoria_resenas_dispersograma.png)
+![Precio Base (USD) vs Pico Histórico de Concurrentes](../images/dispersograma_precio_base_usd_vs_pico_historico_concurrentes.png)
 
-### Pico Histórico de Concurrentes
+**Variables:** Precio Base (USD) vs Pico Histórico de Concurrentes
 
-![Dispersograma de pico histórico de concurrentes](../images/frecuencias_pico_historico_dispersograma.png)
+## Precio Base (USD) vs Jugadores Promedio
 
-### Jugadores Promedio
+![Precio Base (USD) vs Jugadores Promedio](../images/dispersograma_precio_base_usd_vs_jugadores_promedio.png)
 
-![Dispersograma de jugadores promedio](../images/frecuencias_jugadores_promedio_dispersograma.png)
+**Variables:** Precio Base (USD) vs Jugadores Promedio
 
-### Soporte Multiplataforma
+## Porcentaje de Reseñas Positivas (%) vs Pico Histórico de Concurrentes
 
-![Dispersograma de soporte multiplataforma](../images/frecuencias_soporte_multiplataforma_dispersograma.png)
+![Porcentaje de Reseñas Positivas (%) vs Pico Histórico de Concurrentes](../images/dispersograma_porcentaje_resenas_positivas_vs_pico_historico_concurrentes.png)
 
-### Género Principal
+**Variables:** Porcentaje de Reseñas Positivas (%) vs Pico Histórico de Concurrentes
 
-![Dispersograma de género principal](../images/frecuencias_genero_principal_dispersograma.png)
+## Porcentaje de Reseñas Positivas (%) vs Jugadores Promedio
+
+![Porcentaje de Reseñas Positivas (%) vs Jugadores Promedio](../images/dispersograma_porcentaje_resenas_positivas_vs_jugadores_promedio.png)
+
+**Variables:** Porcentaje de Reseñas Positivas (%) vs Jugadores Promedio
+
+## Pico Histórico de Concurrentes vs Jugadores Promedio
+
+![Pico Histórico de Concurrentes vs Jugadores Promedio](../images/dispersograma_pico_historico_concurrentes_vs_jugadores_promedio.png)
+
+**Variables:** Pico Histórico de Concurrentes vs Jugadores Promedio
 
